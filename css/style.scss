@@ -1,0 +1,129 @@
+@function makelongshadow($length,$angle) {
+  $val: 0px 0px transparent;
+  @for $i from 1 through $length {
+    $val: #{$val}, #{$i}px #{$i*$angle}px #000000;
+  }
+  @return $val;
+}
+
+html{
+  padding: 0;
+  margin: 0;
+}
+
+body {
+    font-family: "Geist", "M PLUS 1p", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    padding: 0;
+  }
+.nav-wrap{
+  display: flex;
+  gap:16px;
+}
+.nav ul{
+  list-style: none;
+}
+.fa-brands::before{
+  color: black;
+}
+header {
+    padding: 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+    background-color: salmon;
+    border-bottom: 2px solid;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.logo{
+  font-weight: 400;
+  font-size: 32px;
+}
+main{
+  display: flex;
+  flex-direction: column;
+
+}
+h2{
+  font-size: 60px;
+  font-weight: 900;
+  -webkit-text-stroke: 6px black;
+  color: white;
+  z-index: -1;
+  position: relative;
+  paint-order: stroke;
+  text-shadow: makelongshadow(40, 2);
+  margin-bottom: 30px;
+}
+.intro{
+  height: calc(100vh - 72px);
+  background-image: url(../img/me.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 30px 60px;
+  overflow-y: auto;
+  position: relative;
+}
+.intro h1{
+  color:white;
+  font-weight: 800;
+  font-size: 2.5vw;
+  position: sticky;
+  top: 0;
+}
+.social-media ul{
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+.content {
+  padding: 32px 80px 72px;
+}
+.content-wrap {
+  padding: 40px 40px;
+  border: solid 2px;
+  border-radius: 5px;
+  box-shadow: 10px 10px 0px 0px rgb(0, 0, 0);
+  background-color:lightcyan;
+}
+footer {
+  height: calc(100vh - 72px);
+  width: 100%;
+  border-top: solid 2px;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  color: white;
+}
+.wave-text span{
+  display: inline-block;
+  font-size: 6vw;
+  font-weight: 900;
+  animation: wave 2s ease-in-out infinite;
+  -webkit-text-stroke: 6px black;
+  color: white;
+  paint-order: stroke;
+
+  @for $i from 1 through 11{
+    &:nth-child(#{$i}) {
+      animation-delay: ($i - 1) * 0.1s;
+    }
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+      transform: translateY(0px);
+  }
+  50% {
+      transform: translateY(-25px);
+  }
+}
