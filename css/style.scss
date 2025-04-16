@@ -20,10 +20,7 @@ body {
   }
 .nav-wrap{
   display: flex;
-  gap:16px;
-}
-.nav ul{
-  list-style: none;
+  gap:32px;
 }
 .fa-brands::before{
   color: black;
@@ -34,15 +31,38 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 72px;
+    
     background-color: salmon;
     border-bottom: 2px solid;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 2;
 }
-.logo{
+header .logo{
   font-weight: 400;
   font-size: 32px;
+}
+.nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.nav ul{
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  gap: 16px;
+}
+.nav ul li a{
+  color: #000000;
+  text-decoration: none;
+}
+#about{
+  scroll-margin-top: 72px;
+}
+#work{
+  scroll-margin-top: 72px;
 }
 main{
   display: flex;
@@ -57,8 +77,17 @@ h2{
   z-index: -1;
   position: relative;
   paint-order: stroke;
-  text-shadow: makelongshadow(40, 2);
+  text-shadow: makelongshadow(80, 2);
   margin-bottom: 30px;
+}
+h2 span{
+  display: inline-block;
+  animation: waveCalm 4s ease-in-out infinite;
+  @for $i from 1 through 11{
+    &:nth-child(#{$i}) {
+      animation-delay: ($i - 1) * 0.3s;
+    }
+  }
 }
 .intro{
   height: calc(100vh - 72px);
@@ -82,25 +111,232 @@ h2{
   gap: 32px;
 }
 .content {
-  padding: 32px 80px 72px;
+  padding: 20px 80px 72px;
 }
 .content-wrap {
   padding: 40px 40px;
   border: solid 2px;
   border-radius: 5px;
   box-shadow: 10px 10px 0px 0px rgb(0, 0, 0);
+  background-color: white;
+  margin-bottom: 32px;
+  
+}
+.content-wrap.about {
   background-color:lightcyan;
 }
+h3{
+  text-align: center;
+  margin-bottom: 40px;
+}
+.scroll-container {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  margin-top: 32px;
+  margin-bottom: 60px;
+
+}
+
+.scroll-content {
+  display: flex;
+  animation: scroll 30s linear infinite;
+
+  &.rev {
+    animation: scrollRev 20s linear infinite;
+  }
+}
+
+.item {
+  flex: 0 0 auto;
+  margin: 0 20px;/*左右の余白はここを調整*/
+  text-align: center;
+  font-size: 4vw;
+  font-weight: 800;
+  -webkit-text-stroke: 6px black;
+  text-shadow: makelongshadow(12, 1);
+  color: white;
+  paint-order: stroke;
+}
+#Ae-Pr{color: #9d9dff;}
+#Ai{color: #f89e1a;}
+#Ps-Lrc{color: #3cabff;}
+#Blender{color: #e9811e;}
+#Eclipse{color: #f7941d;}
+#JN{color: #f37c30;}
+#SO{color: #4fedfd;}
+#VSC{color: #3babf2;}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+@keyframes scrollRev {
+  0% {
+      transform: translateX(-100%);
+  }
+  100% {
+      transform: translateX(0%);
+  }
+}
+
+.works{
+  display: grid;
+  /* 
+     repeat -> 列の定義を繰り返し行う
+     auto-fit -> 利用可能なスペースに基づいて、自動的に列数を調整する
+     minmax(最小幅, 最大幅)
+  */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 5%;
+}
+.content-wrap.work {
+  background-color:cornsilk;
+
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.work h3{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.work ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap:8px;
+  margin-bottom: 20px;
+}
+.work ul li{
+  padding: 4px 8px;
+  width: auto;
+  border: solid 2px;
+  border-radius: 30px;
+  background-color: white;
+  white-space: nowrap;
+}
+.work p{
+  margin-bottom: 40px;
+}
+/* モーダルを開くボタン */
+.modal-open{
+  font-size: 16px;
+  font-weight: bold;
+  padding: 20px;
+  width: auto;
+  height: auto;
+  color: #fff;
+  background: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* モーダルと背景の指定 */
+.modal{
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(0,0,0,20%);
+  padding: 40px 20px;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+  box-sizing: border-box;
+}
+.youtube{
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  margin-bottom: 20px;
+  
+}
+.youtube iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* モーダルの擬似要素の指定 */
+.modal:before{
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  margin-left: -0.2em;
+}
+
+/* クラスが追加された時の指定 */
+.modal.is-active{
+  opacity: 1;
+  visibility: visible;
+}
+
+/* モーダル内側の指定 */
+.modal-container{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 600px;
+  width: 90%;
+  border: solid 2px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 5px 5px 0px 0px rgb(0, 0, 0);
+}
+
+/* モーダルを閉じるボタンの指定 */
+.modal-close{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -20px;
+  right: -20px;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  background: #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* モーダルのコンテンツ部分の指定 */
+.modal-content{
+  text-align: left;
+  line-height: 1.8;
+  padding: 20px;
+}
+
+/* モーダルのコンテンツ部分のテキストの指定 */
+.modal-content p{
+  margin: 1em 0;
+}
+
 footer {
   height: calc(100vh - 72px);
   width: 100%;
-  border-top: solid 2px;
   background-color: #000000;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 40px;
+}
+footer span{
   color: white;
 }
 .wave-text span{
@@ -125,5 +361,33 @@ footer {
   }
   50% {
       transform: translateY(-25px);
+  }
+}
+@keyframes waveCalm {
+  0%, 100% {
+      transform: translateY(0px);
+  }
+  50% {
+      transform: translateY(-15px);
+  }
+}
+
+@media screen and (max-width: 767px){
+  .nav-wrap {
+    display: none;
+  }
+  .logo {
+    align-items: center;
+    justify-content: center;
+  }
+  .content {
+    padding: 32px 10px 72px;
+  }
+  .content-wrap {
+    padding: 20px 30px;
+    border: solid 2px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 0px 0px rgb(0, 0, 0);
+    background-color:lightcyan;
   }
 }

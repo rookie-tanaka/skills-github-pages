@@ -17,7 +17,8 @@
         <div class="nav-wrap">
             <div class="nav">
                 <ul>
-                    <li>about</li>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#work">work</a></li>
                 </ul>  
             </div>
             <div class="social-media">
@@ -40,19 +41,99 @@
         <section class="intro">
             <h1>Portfolio</h1>
         </section>
-        <section class="about">
-            <div class="content">
-                <h2>about</h2>
-                <div class="content-wrap">
+        <div class="content">
+            <section class="about" id="about">            
+                <h2><span>a</span><span>b</span><span>o</span><span>u</span><span>t</span></h2>
+                <div class="content-wrap about">
                     <p>こんにちは、田中智貴です。現在、
                         北海道科学大学でデザインと
                         プログラミングについて学んでいます。<br>
-                        学習中ゆえ、実務経験はないものの、
-                </div>
-                
+                        小学生の頃からものをつくることが好きで、
+                        RPGをつくっては友達に遊んでもらっていました。<br>
+                    </p>
+                </div> 
+            </section>
+        </div> 
+        <h3>こういったツールがつかえます</h3>
+        <div class="scroll-container">
+            <div class="scroll-content">
+                <div class="item" id="Ae-Pr">Adobe After Effects</div>
+                <div class="item" id="Ai">Adobe Illustrator</div>
+                <div class="item" id="Ps-Lrc">Adobe Photoshop</div>
+                <div class="item" id="Ae-Pr">Adobe Premiere Pro</div>
+                <div class="item" id="Ps-Lrc">Adobe Lightroom Classic</div>
             </div>
-        </section>
-
+            <div class="scroll-content">
+                <div class="item" id="Ae-Pr">Adobe After Effects</div>
+                <div class="item" id="Ai">Adobe Illustrator</div>
+                <div class="item" id="Ps-Lrc">Adobe Photoshop</div>
+                <div class="item" id="Ae-Pr">Adobe Premiere Pro</div>
+                <div class="item" id="Ps-Lrc">Adobe Lightroom Classic</div>
+            </div>
+        </div>
+        <div class="scroll-container">
+            <div class="scroll-content rev">
+                <div class="item" id="Blender">Blender</div>
+                <div class="item" id="Eclipse">Eclipse</div>
+                <div class="item" id="JN">Jupyter Notebook</div>
+                <div class="item" id="SO">Studio One</div>
+                <div class="item" id="VSC">Visual Studio Code</div>
+            </div>
+            <div class="scroll-content rev">
+                <div class="item" id="Blender">Blender</div>
+                <div class="item" id="Eclipse">Eclipse</div>
+                <div class="item" id="JN">Jupyter Notebook</div>
+                <div class="item" id="SO">Studio One</div>
+                <div class="item" id="VSC">Visual Studio Code</div>
+            </div>
+        </div>
+        <div class="content">
+            <section class="work" id="work">
+                <h2>
+                    <span>w</span><span>o</span><span>r</span><span>k</span>
+                    
+                </h2>
+                <div class="works">
+                    <div class="content-wrap work">
+                        <h3>HUSイルミネーション映像課題</h3>
+                        <ul>
+                            <li>#音楽</li>
+                            <li>#映像</li>
+                            <li>#ロゴアニメーション</li>
+                        </ul>
+                        <p>北海道科学大学のキャンパスイルミネーションを紹介する映像を
+                            チームで制作しました。私は映像の一部と音楽、ロゴアニメーションを
+                            担当しました。
+                        </p>
+                        <!-- モーダルを開くボタン -->
+                        <button class="modal-open js-modal-open">詳しく</button>
+                        <!-- モーダル本体 -->
+                        <div class="modal js-modal">
+                            <div class="modal-container">
+                            <!-- モーダルを閉じるボタン -->
+                            <div class="modal-close js-modal-close">×</div>
+                            <!-- モーダル内部のコンテンツ -->
+                            <div class="modal-content">
+                                <h3>HUSイルミネーション映像課題</h3>
+                                <div class="youtube">
+                                    <iframe src="https://www.youtube.com/embed/f1BY3I1tJFw?si=6v7vk6JUxS-IEydZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                                <ul>
+                                    <li>#音楽</li>
+                                    <li>#映像</li>
+                                    <li>#ロゴアニメーション</li>
+                                </ul>
+                                <p>北海道科学大学のキャンパスイルミネーションを紹介する映像を
+                                    チームで制作しました。私は映像の一部と音楽、ロゴアニメーションを
+                                    担当しました。
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
     <footer>
         <div class="wave-text">
@@ -71,5 +152,6 @@
         <span>随時更新していきますので、お楽しみに！</span>
     </footer>
     <script src="https://kit.fontawesome.com/e615a7eb50.js" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
