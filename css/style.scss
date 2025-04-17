@@ -101,9 +101,14 @@ h2 span{
 .intro h1{
   color:white;
   font-weight: 800;
-  font-size: 2.5vw;
+  font-size: max(5vw, 40px);
   position: sticky;
   top: 0;
+  filter: blur(3px);
+  text-shadow: makelongshadow(4, 1);
+  color: white;
+  paint-order: stroke;
+
 }
 .social-media ul{
   list-style: none;
