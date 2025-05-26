@@ -25,18 +25,58 @@ body {
 .fa-brands::before{
   color: black;
 }
-header {
-    padding: 0 60px;
+.header-notice {
+    background-color: #000000;
+    padding: 8px 0;
+    overflow: hidden;
+    color: white;
+}
+
+.notice-scroll-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 72px;
-    
-    background-color: salmon;
-    border-bottom: 2px solid;
-    position: sticky;
-    top: 0;
-    z-index: 2;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.notice-scroll-content {
+    display: flex;
+    animation: noticeScroll 20s linear infinite;
+}
+
+.notice-item {
+    flex: 0 0 auto;
+    margin: 0 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@keyframes noticeScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+header{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-main{
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+  
+  background-color: salmon;
+  border-bottom: 2px solid;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 header .logo{
   font-weight: 400;
@@ -60,6 +100,59 @@ header .logo{
 }
 #about{
   scroll-margin-top: 72px;
+}
+.card-container {
+  position: relative;
+  width: calc(85.60vw/2);
+  height: calc(53.98vw/2);
+  perspective: 1000px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 20px 0 40px;
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: box-shadow 0.3s;
+  will-change: transform;
+}
+
+.card:hover {
+  border-radius: 10px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+.card-front {
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+.card-back {
+  background-color: #343a40;
+  color: #f8f9fa;
+  transform: rotateY(180deg);
+}
+
+.flipped {
+  transform: rotateY(180deg);
 }
 #work{
   scroll-margin-top: 72px;
@@ -386,6 +479,11 @@ footer span{
 @media screen and (max-width: 767px){
   .nav-wrap {
     display: none;
+  }
+  .card-container {
+    position: relative;
+    width: 85.60vw;
+    height: 53.98vw;
   }
   .logo {
     align-items: center;

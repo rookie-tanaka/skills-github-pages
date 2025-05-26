@@ -4,39 +4,46 @@ const cardContainer = document.querySelector('.card-container');
 const card = document.querySelector('.card');
 let isFlipped = false;
 
-// マウスの動きでボックスを傾ける関数
+// マウスの動きでカードを傾ける関数
 function tiltCard(e) {
-    // ボックスの位置を取得
+    // カードの位置を取得
     const rect = cardContainer.getBoundingClientRect();
     const cardX = rect.left + rect.width / 2;
     const cardY = rect.top + rect.height / 2;
     
-    // マウスの位置からボックスまでの距離を計算
+    // マウスの位置からカードまでの距離を計算
     const mouseX = e.clientX - cardX;
     const mouseY = e.clientY - cardY;
     
     // 傾く角度を計算（距離に応じて調整）
     // 画面の端まで15度で傾くように計算
-    const tiltX = -(mouseY / window.innerHeight * 30);
-    const tiltY = (mouseX / window.innerWidth * 30);
+    const tiltX = (mouseY / window.innerHeight * 30);
+    const tiltY = -(mouseX / window.innerWidth * 30);
     
-    // ボックスに角度を適用
+    // カードに角度を適用
     gsap.to(card, {
         rotationX: tiltX,
         rotationY: isFlipped ? tiltY + 180 : tiltY,
-        duration: 0.5,
-        
+        duration: 0.01, // 傾きのアニメーションを少し早くする
+        ease: "none" // よりシンプルなイージングを使用
     });
 }
 
-// クリックでボックスをひっくり返す関数
+// クリックでカードをひっくり返す関数
 function flipCard() {
     isFlipped = !isFlipped;
     
+    // CSSクラスの操作でアニメーションをサポート
+    if (isFlipped) {
+        card.classList.add('flipped');
+    } else {
+        card.classList.remove('flipped');
+    }
+    
     gsap.to(card, {
         rotationY: isFlipped ? 180 : 0,
-        duration: 1.2,
-        ease: "back.out(1.5)"
+        duration: 0.4, // 少し短めのアニメーション
+        ease: "power4.out"
     });
 }
 
@@ -47,15 +54,17 @@ cardContainer.addEventListener('click', flipCard);
 // タッチデバイス対応
 window.addEventListener('touchmove', (e) => {
     if (e.touches.length > 0) {
-        tiltCard(e.touches[0]);
+        tiltCard(e.touches[0]); // 正しい関数名に修正
     }
 }, { passive: true });
 
 // 初期表示時のアニメーション
-gsap.fromTo(card, 
+gsap.fromTo(card, // 正しい変数名に修正
     { rotationX: -20, rotationY: 10, scale: 0.8, opacity: 0 },
     { rotationX: 0, rotationY: 0, scale: 1, opacity: 1, duration: 1.2, ease: "elastic.out(1, 0.5)" }
 );
+
+
 //https://web-camp.io/magazine/archives/91511/より
 window.addEventListener('resize', () => {
     let vh = window.innerHeight * 0.01;
