@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 gsap.registerPlugin(ScrollTrigger);
 
 const cardContainer = document.querySelector('.card-container');
@@ -56,6 +57,8 @@ gsap.fromTo(card,
     { rotationX: -20, rotationY: 10, scale: 0.8, opacity: 0 },
     { rotationX: 0, rotationY: 0, scale: 1, opacity: 1, duration: 1.2, ease: "elastic.out(1, 0.5)" }
 );
+=======
+>>>>>>> parent of d4b8ddd (2025/04/21 1)
 //https://web-camp.io/magazine/archives/91511/より
 window.addEventListener('resize', () => {
     let vh = window.innerHeight * 0.01;
@@ -84,6 +87,7 @@ function modalOut(e) {
     modal.classList.remove('is-active');
   }
 }
+<<<<<<< HEAD
     class InertiaScroll {
       constructor() {
         // DOM要素
@@ -222,3 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       });
   });
+=======
+addEventListener('click', modalOut);
+>>>>>>> parent of d4b8ddd (2025/04/21 1)
