@@ -208,7 +208,7 @@
 </head>
 <body>
 	<a-scene cursor="rayOrigin: mouse" vr-mode-ui="enabled: false">
-		<a-sky src="./img/panorama.png" rotation="0 -180 0"></a-sky>
+		<a-sky src="./img/panorama.webp" rotation="0 -180 0"></a-sky>
 		
 		<!-- 移動無効化したカメラ -->
 		<a-camera look-controls="enabled: true" wasd-controls="enabled: false" position="0 0 0"></a-camera>
@@ -346,7 +346,7 @@ AFRAME.registerComponent('image_viewer', {
 
 		this.el.addEventListener('click', function () {
 			const info = imageInfo[data.imageId] || {title: '作品', description: '説明なし'};
-			modalImage.src = `./img/${data.imageId}.png`;
+			modalImage.src = `./img/${data.imageId}.webp`;
 			imageTitle.textContent = info.title;
 			imageDescription.textContent = info.description;
 			
