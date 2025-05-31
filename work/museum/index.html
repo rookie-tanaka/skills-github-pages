@@ -2,63 +2,484 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-	<title>展覧会サンプル</title>
+	<title>展覧会サンプル - モーダル表示</title>
 	<meta name="description" content="360° Image - A-Frame">
 	<script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;900&display=swap" rel="stylesheet">
 	<style>
+	body {
+		margin: 0;
+		font-family: 'Zen Old Mincho', serif;
+		color: #434343;
+	}
 	.modal {
-	display: none;
-	position: fixed;
-	z-index: 10;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: rgba(0,0,0,0.5);
+		display: none;
+		position: fixed;
+		z-index: 1000;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		padding: 20px;
+		box-sizing: border-box;
+		/* モーダルアニメーション */
+		transition: all 0.3s ease;
+		opacity: 0;
+		/* 背景ブラーエフェクト */
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
+	}
+	.modal.show {
+		display: flex;
+		/* Flexboxで上下中央寄せ */
+		align-items: center;
+		justify-content: center;
+		opacity: 1;
+	}
+	
+	/* A-Frameシーンのブラーエフェクト */
+	a-scene.modal-blur {
+		filter: blur(5px);
+		-webkit-filter: blur(5px);
+		transition: filter 0.3s ease;
+		-webkit-transition: -webkit-filter 0.3s ease;
+		transform: scale(1.02);
 	}
 	.modal-content {
-	background-color: #fefefe;
-	margin: 15% auto;
-	padding: 20px;
-	border-radius: 10px;
-	width: 50%;
+		background-color: #fefefe;
+		margin: 0;
+		padding: 20px;
+		border-radius: 10px;
+		width: 90%;
+		max-width: 800px;
+		max-height: 90vh;
+		text-align: center;
+		overflow-y: auto;
+		position: relative;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+	}
+	.modal-image {
+		max-width: 100%;
+		max-height: 70vh;
+		object-fit: contain;
 	}
 	.close {
-	color: #aaa;
-	float: right;
-	font-size: 28px;
-	cursor: pointer;
+		color: #aaa;
+		float: right;
+		font-size: 28px;
+		cursor: pointer;
+		position: absolute;
+		right: 20px;
+		top: 10px;
+	}
+	.close:hover,
+	.close:focus {
+		color: #000;
+		text-decoration: none;
+	}
+	.image-title {
+		font-weight: 900;
+		font-size: 1.8em;
+		margin: 15px 0;
+		color: #333;
+	}
+	
+	/* Info切り替えUI用のスタイル */
+	.info-toggle-container {
+		position: fixed;
+		bottom: 30px;
+		left: 30px;
+		z-index: 500;
+		font-family: 'Arial', sans-serif;
+	}
+	
+	.info-toggle-button {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		border: none;
+		border-radius: 50px;
+		padding: 15px 25px;
+		color: white;
+		font-size: 16px;
+		font-weight: bold;
+		cursor: pointer;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+		transition: all 0.3s ease;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		min-width: 120px;
+		justify-content: center;
+	}
+	
+	.info-toggle-button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+		background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+	}
+	
+	.info-toggle-button:active {
+		transform: translateY(0);
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	}
+	
+	.info-toggle-button.hidden {
+		background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+	}
+	
+	.info-toggle-button.hidden:hover {
+		background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%);
+	}
+	
+	.toggle-icon {
+		font-size: 20px;
+		transition: transform 0.3s ease;
+	}
+	
+	.info-toggle-button.hidden .toggle-icon {
+		transform: rotate(360deg);
+	}
+	
+	/* 設定パネル */
+	.settings-panel {
+		position: fixed;
+		bottom: 180px;
+		left: 30px;
+		background: rgba(255, 255, 255, 0.95);
+		padding: 15px;
+		border-radius: 15px;
+		font-size: 12px;
+		color: #333;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+		transition: all 0.3s ease;
+		z-index: 500;
+		opacity: 0;
+		transform: translateY(20px);
+		pointer-events: none;
+		max-width: 200px;
+	}
+	
+	.settings-panel.show {
+		opacity: 1;
+		transform: translateY(0);
+		pointer-events: auto;
+	}
+	
+	.settings-option {
+		margin: 8px 0;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+	
+	.settings-option input[type="checkbox"] {
+		width: 16px;
+		height: 16px;
+		cursor: pointer;
+	}
+	
+	.settings-option label {
+		cursor: pointer;
+		user-select: none;
+	}
+	
+	/* レスポンシブ対応 */
+	@media (max-width: 768px) {
+		.info-toggle-container {
+			bottom: 20px;
+			left: 20px;
+		}
+		
+		.info-toggle-button {
+			padding: 12px 20px;
+			font-size: 14px;
+			min-width: 100px;
+		}
+	
+		
+		.settings-panel {
+			bottom: 140px;
+			left: 20px;
+			max-width: 180px;
+		}
 	}
 	</style>
 </head>
 <body>
-	<a-scene>
-		<a-sky src="/img/museum.png" rotation="0 -90 0"></a-sky>
-		<a-image width="2" height="2" rotation="0 0 0" position="0 0 -10" src="/img/Michael.png" same_window="link: https://www.google.com/"></a-image>
-    <a-text value="詳細を見る" align="center" position="0 0 0.1" color="#000"></a-text>
-</a-plane>
-	</a-scene>
-	<div id="modal" class="modal">
- 		<div class="modal-content">
-    	<span class="close">&times;</span>
-    	<p>ここにモーダルの内容を表示</p>
-	</div>
-</div>
-<script>
-//同窓で開く用
-    AFRAME.registerComponent('same_window', {
-        schema: {
-            link: {type: 'asset', default: ''}
-        },
+	<a-scene cursor="rayOrigin: mouse" vr-mode-ui="enabled: false">
+		<a-sky src="./img/panorama.png" rotation="0 -180 0"></a-sky>
+		
+		<!-- 移動無効化したカメラ -->
+		<a-camera look-controls="enabled: true" wasd-controls="enabled: false" position="0 0 0"></a-camera>
+		
+		<!-- Info アイコンをグループ化 -->
+		<a-entity id="infoGroup">
+			<a-image width="4" height="4" rotation="0 0 0" position="21.523 -5.617 -34.486" 
+				src="./img/circle-info-solid.png" 
+				image_viewer="imageId: 01"
+				class="info-icon"
+				data-artwork-name="ルーヴシエンヌの道"></a-image>
+			
+			<a-image width="4" height="4" rotation="0 -90 0" position="28.000 -5.468 -26.822" 
+				src="./img/circle-info-solid.png" 
+				image_viewer="imageId: 02"
+				class="info-icon"
+				data-artwork-name="ヴィルヌーヴ＝ラ＝ガレンヌの橋"></a-image>
+			
+			<a-image width="4" height="4" rotation="0 -90 0" position="28.595 -5.612 -15.343" 
+				src="./img/circle-info-solid.png" 
+				image_viewer="imageId: 03"
+				class="info-icon"
+				data-artwork-name="ポール・マルりーの洪水"></a-image>
+			
+			<a-image width="4" height="4" rotation="0 -90 0" position="30.000 -5.764 -3.573" 
+				src="./img/circle-info-solid.png" 
+				image_viewer="imageId: 04"
+				class="info-icon"
+				data-artwork-name="春の太陽─ロワン河"></a-image>
+			
+			<a-image width="4" height="4" rotation="0 -90 0" position="29.241 -9.958 4.613" 
+				src="./img/circle-info-solid.png" 
+				image_viewer="imageId: 05"
+				class="info-icon"
+				data-artwork-name="モレの教会堂"></a-image>
 
-        init: function () {
-            let data = this.data;
-            this.el.addEventListener('click', function () {
-            location.href = data.link;
-            });
-        }
-    });  
+			<a-image width="4" height="4" rotation="0 90 0" position="-29.241 -9.958 5.891"
+				src="./img/circle-info-solid.png" 
+				image_viewer="imageId: 06"
+				class="info-icon"
+				data-artwork-name="ルーヴシエンヌの雪"></a-image>
+
+			<a-image width="4" height="4" rotation="0 90 0" position="-30.000 -6.245 -3.973"
+				src="./img/circle-info-solid.png" 
+				image_viewer="imageId: 07"
+				class="info-icon"
+				data-artwork-name="森林、まわりの風景"></a-image>
+
+			<a-image width="4" height="4" rotation="0 90 0" position="-28.595 -5.919 -16.733"
+				src="./img/circle-info-solid.png" 
+				image_viewer="imageId: 08"
+				class="info-icon"
+				data-artwork-name="ルーヴシエンヌの雪効果"></a-image>
+
+			<a-image width="4" height="4" rotation="0 90 0" position="-28.000 -5.803 -29.210"
+				src="./img/circle-info-solid.png" 
+				image_viewer="imageId: 09"
+				class="info-icon"
+				data-artwork-name="サン＝マメスのロワン河"></a-image>
+				
+			<a-image width="4" height="4" rotation="0 0 0" position="-18.782 -5.468 -34.476"
+				src="./img/circle-info-solid.png" 
+				image_viewer="imageId: 10"
+				class="info-icon"
+				data-artwork-name="ハンプトンコートのテムズ川"></a-image>
+		</a-entity>
+	</a-scene>
+
+	<!-- Info切り替えUI -->
+	<div class="info-toggle-container">
+		<button id="infoToggleButton" class="info-toggle-button" onclick="toggleInfoDisplay()">
+			<span class="toggle-icon">🙂</span>
+			<span id="toggleButtonText">表示</span>
+		</button>
+	</div>
+
+	<!-- 設定パネル -->
+	<div id="settingsPanel" class="settings-panel">
+		<div class="settings-option">
+			<input type="checkbox" id="autoHideStatus" checked>
+			<label for="autoHideStatus">自動ステータス非表示</label>
+		</div>
+		<div class="settings-option">
+			<input type="checkbox" id="smoothAnimation" checked>
+			<label for="smoothAnimation">スムーズアニメーション</label>
+		</div>
+		<div class="settings-option">
+			<input type="checkbox" id="showInfoCount" checked>
+			<label for="showInfoCount">作品数表示</label>
+		</div>
+	</div>
+
+	<!-- モーダルウィンドウ -->
+	<div id="imageModal" class="modal">
+		<div class="modal-content">
+			<span class="close" id="closeModal">&times;</span>
+			<h2 class="image-title" id="imageTitle">作品タイトル</h2>
+			<img id="modalImage" class="modal-image" src="" alt="作品画像">
+			<p id="imageDescription">作品の説明がここに表示されます。</p>
+		</div>
+	</div>
+
+<script>
+// グローバル変数
+let infoVisible = true;
+let statusTimeout = null;
+let settingsVisible = false;
+
+// 画像表示用のA-Frameコンポーネント
+AFRAME.registerComponent('image_viewer', {
+	schema: {
+		imageId: {type: 'string', default: '01'}
+	},
+
+	init: function () {
+		let data = this.data;
+		let modal = document.getElementById('imageModal');
+		let modalImage = document.getElementById('modalImage');
+		let imageTitle = document.getElementById('imageTitle');
+		let imageDescription = document.getElementById('imageDescription');
+		
+		// 画像情報のデータベース
+		const imageInfo = {
+			'01': {title: 'ルーヴシエンヌの道', description: '1876年'},
+			'02': {title: 'ヴィルヌーヴ＝ラ＝ガレンヌの橋', description: '1872年'},
+			'03': {title: 'ポール・マルりーの洪水', description: '1987年'},
+			'04': {title: '春の太陽─ロワン河', description: '1892年'},
+			'05': {title: 'モレの教会堂', description: '1894年'},
+			'06': {title: 'ルーヴシエンヌの雪', description: '1878年'},
+			'07': {title: '森林、まわりの風景', description: '1895年'},
+			'08': {title: 'ルーヴシエンヌの雪効果', description: '1874年'},
+			'09': {title: 'サン＝マメスのロワン河', description: '1874年'},
+			'10': {title: 'ハンプトンコートのテムズ川', description: '1874年'}
+		};
+
+		this.el.addEventListener('click', function () {
+			const info = imageInfo[data.imageId] || {title: '作品', description: '説明なし'};
+			modalImage.src = `./img/${data.imageId}.png`;
+			imageTitle.textContent = info.title;
+			imageDescription.textContent = info.description;
+			
+			// A-Frameシーンにブラーエフェクトを適用
+			const scene = document.querySelector('a-scene');
+			scene.classList.add('modal-blur');
+			
+			// Flexboxで中央寄せ表示
+			modal.style.display = 'flex';
+			modal.classList.add('show');
+		});
+	}
+});
+
+// Info表示切り替え関数
+function toggleInfoDisplay() {
+	const infoGroup = document.getElementById('infoGroup');
+	const toggleButton = document.getElementById('infoToggleButton');
+	const toggleButtonText = document.getElementById('toggleButtonText');
+	const toggleIcon = document.querySelector('.toggle-icon');
+	const smoothAnimation = document.getElementById('smoothAnimation').checked;
+	
+	infoVisible = !infoVisible;
+	
+	if (smoothAnimation) {
+		// スムーズアニメーション
+		if (infoVisible) {
+			infoGroup.setAttribute('animation', 'property: visible; to: true; dur: 0');
+			infoGroup.setAttribute('animation__fade', 'property: opacity; from: 0; to: 1; dur: 500');
+			infoGroup.object3D.visible = true;
+		} else {
+			infoGroup.setAttribute('animation__fade', 'property: opacity; from: 1; to: 0; dur: 500');
+			setTimeout(() => {
+				infoGroup.object3D.visible = false;
+			}, 500);
+		}
+	} else {
+		// 即座に切り替え
+		infoGroup.object3D.visible = infoVisible;
+	}
+	
+	// ボタンの表示更新
+	if (infoVisible) {
+		toggleButton.classList.remove('hidden');
+		toggleButtonText.textContent = '表示';
+		toggleIcon.textContent = '🙂';
+	} else {
+		toggleButton.classList.add('hidden');
+		toggleButtonText.textContent = '非表示';
+		toggleIcon.textContent = '😎';
+	}
+	
+	// ステータス更新
+	updateStatus();
+	
+	console.log(`Info表示: ${infoVisible ? '有効' : '無効'}`);
+}
+
+// ステータス表示更新
+function updateStatus() {
+	const statusText = document.getElementById('statusText');
+	const infoStatus = document.getElementById('infoStatus');
+	const showInfoCount = document.getElementById('showInfoCount').checked;
+	const infoIcons = document.querySelectorAll('.info-icon');
+	
+	const countText = showInfoCount ? ` (${infoIcons.length}個)` : '';
+	const statusMessage = infoVisible ? 
+		`作品情報: 表示中${countText}` : 
+		`作品情報: 非表示${countText}`;
+	
+	statusText.textContent = statusMessage;
+	
+	// ステータスの色変更
+	if (infoVisible) {
+		infoStatus.classList.remove('hidden');
+		infoStatus.classList.add('visible');
+	} else {
+		infoStatus.classList.remove('visible');
+		infoStatus.classList.add('hidden');
+	}
+}
+
+// 初期化
+document.addEventListener('DOMContentLoaded', function() {
+	updateStatus();
+	
+	console.log('Info切り替えUI初期化完了');
+	console.log('操作方法:');
+	console.log('- ボタンクリック: Info表示/非表示切り替えのみ');
+	console.log('- カメラ移動: 無効化（視点回転のみ可能）');
+});
+
+// モーダルを閉じる処理
+document.getElementById('closeModal').addEventListener('click', function() {
+	const modal = document.getElementById('imageModal');
+	const scene = document.querySelector('a-scene');
+	
+	// ブラーエフェクトを削除
+	scene.classList.remove('modal-blur');
+	
+	// モーダルを閉じる
+	modal.style.display = 'none';
+	modal.classList.remove('show');
+});
+
+// モーダル背景をクリックして閉じる
+window.addEventListener('click', function(event) {
+	const modal = document.getElementById('imageModal');
+	if (event.target === modal) {
+		const scene = document.querySelector('a-scene');
+		
+		// ブラーエフェクトを削除
+		scene.classList.remove('modal-blur');
+		
+		// モーダルを閉じる
+		modal.style.display = 'none';
+		modal.classList.remove('show');
+	}
+});
+
+
+
+document.getElementById('showInfoCount').addEventListener('change', function() {
+	updateStatus(); // 作品数表示設定が変更されたらステータスを更新
+});
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+imageTitle.innerHTML = escapeHtml(info.title);
 </script>
 </body>
 </html>
