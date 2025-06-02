@@ -59,7 +59,7 @@ body {
 header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 4;
 }
 
 .header-main {
@@ -266,6 +266,12 @@ h3 {
   margin-bottom: 40px;
 }
 
+h4 {
+  margin-bottom: 20px;
+}
+h5 {
+  font-size: 1em;
+}
 .scroll-container {
   display: flex;
   overflow: hidden;
@@ -423,6 +429,7 @@ h3 {
   overflow: hidden;
   padding-bottom: 56.25%;
   margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .youtube iframe {
@@ -483,6 +490,13 @@ h3 {
   text-align: left;
   line-height: 1.8;
   padding: 20px;
+}
+
+.modal img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 /* モーダルのコンテンツ部分のテキストの指定 */

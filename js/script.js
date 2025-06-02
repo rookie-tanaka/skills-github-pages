@@ -41,52 +41,66 @@ function flipCard() {
 }
 
 // イベントリスナーを設定
-window.addEventListener('mousemove', tiltCard);
-cardContainer.addEventListener('click', flipCard);
+if (cardContainer) {
+    window.addEventListener('mousemove', tiltCard);
+    cardContainer.addEventListener('click', flipCard);
 
-// タッチデバイス対応
-window.addEventListener('touchmove', (e) => {
-    if (e.touches.length > 0) {
-        tiltCard(e.touches[0]);
-    }
-}, { passive: true });
+    // タッチデバイス対応
+    window.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) {
+            tiltCard(e.touches[0]);
+        }
+    }, { passive: true });
 
-// 初期表示時のアニメーション
-gsap.fromTo(card, 
-    { rotationX: -20, rotationY: 10, scale: 0.8, opacity: 0 },
-    { rotationX: 0, rotationY: 0, scale: 1, opacity: 1, duration: 1.2, ease: "elastic.out(1, 0.5)" }
-);
+    // 初期表示時のアニメーション
+    gsap.fromTo(card, 
+        { rotationX: -20, rotationY: 10, scale: 0.8, opacity: 0 },
+        { rotationX: 0, rotationY: 0, scale: 1, opacity: 1, duration: 1.2, ease: "elastic.out(1, 0.5)" }
+    );
+}
+
 //https://web-camp.io/magazine/archives/91511/より
 window.addEventListener('resize', () => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
-  });
-//要素を取得
-const modal = document.querySelector('.js-modal'),
-      open = document.querySelector('.js-modal-open'),
-      close = document.querySelector('.js-modal-close');
+});
 
-//「開くボタン」をクリックしてモーダルを開く
-function modalOpen() {
-  modal.classList.add('is-active');
-}
-open.addEventListener('click', modalOpen);
+// ★★★ モーダル機能の修正版 ★★★
+// すべてのモーダル要素を取得
+const modals = document.querySelectorAll('.js-modal');
+const openButtons = document.querySelectorAll('.js-modal-open');
+const closeButtons = document.querySelectorAll('.js-modal-close');
 
-//「閉じるボタン」をクリックしてモーダルを閉じる
-function modalClose() {
-  modal.classList.remove('is-active');
-}
-close.addEventListener('click', modalClose);
+// 各モーダルペアに対してイベントリスナーを設定
+openButtons.forEach((openButton, index) => {
+    const modal = modals[index];
+    const closeButton = closeButtons[index];
+    
+    if (modal && closeButton) {
+        // 「開くボタン」をクリックしてモーダルを開く
+        function modalOpen() {
+            modal.classList.add('is-active');
+        }
+        openButton.addEventListener('click', modalOpen);
 
-//「モーダルの外側」をクリックしてモーダルを閉じる
-function modalOut(e) {
-  if (e.target == modal) {
-    modal.classList.remove('is-active');
-  }
-}
+        // 「閉じるボタン」をクリックしてモーダルを閉じる
+        function modalClose() {
+            modal.classList.remove('is-active');
+        }
+        closeButton.addEventListener('click', modalClose);
 
-    class InertiaScroll {
-      constructor() {
+        // 「モーダルの外側」をクリックしてモーダルを閉じる
+        function modalOut(e) {
+            if (e.target === modal) {
+                modal.classList.remove('is-active');
+            }
+        }
+        modal.addEventListener('click', modalOut);
+    }
+});
+
+class InertiaScroll {
+    constructor() {
         // DOM要素
         this.container = document.querySelector('.scroll-container');
         this.content = document.querySelector('.scroll-content');
@@ -112,9 +126,9 @@ function modalOut(e) {
         
         // 初期化
         this.init();
-      }
-      
-      init() {
+    }
+    
+    init() {
         // サイズの設定
         this.onResize();
         
@@ -126,16 +140,16 @@ function modalOut(e) {
         
         // アニメーションループの開始
         this.update();
-      }
-      
-      onResize() {
+    }
+    
+    onResize() {
         // コンテンツの高さを計算
         this.scrollHeight = this.content.scrollHeight;
         this.windowHeight = window.innerHeight;
         this.maxScrollY = this.scrollHeight - this.windowHeight;
-      }
-      
-      onWheel(e) {
+    }
+    
+    onWheel(e) {
         // デフォルトのスクロール動作を防止
         e.preventDefault();
         
@@ -144,19 +158,19 @@ function modalOut(e) {
         
         // 範囲を制限
         this.targetY = Math.max(0, Math.min(this.targetY, this.maxScrollY));
-      }
-      
-      // タッチ関連の変数
-      touchStartY = 0;
-      lastTouchY = 0;
-      
-      onTouchStart(e) {
+    }
+    
+    // タッチ関連の変数
+    touchStartY = 0;
+    lastTouchY = 0;
+    
+    onTouchStart(e) {
         // タッチ開始位置を記録
         this.touchStartY = e.touches[0].clientY;
         this.lastTouchY = this.touchStartY;
-      }
-      
-      onTouchMove(e) {
+    }
+    
+    onTouchMove(e) {
         // デフォルトのスクロール動作を防止
         e.preventDefault();
         
@@ -174,15 +188,15 @@ function modalOut(e) {
         
         // 前回のタッチ位置を更新
         this.lastTouchY = currentTouchY;
-      }
-      
-      update() {
+    }
+    
+    update() {
         // 現在位置をターゲット位置に徐々に近づける（イナーシャ効果）
         this.currentY += (this.targetY - this.currentY) * this.ease;
         
         // 小さすぎる変化は四捨五入して停止させる（パフォーマンス向上）
         if (Math.abs(this.targetY - this.currentY) < 0.1) {
-          this.currentY = this.targetY;
+            this.currentY = this.targetY;
         }
         
         // transformでY位置を設定
@@ -190,37 +204,41 @@ function modalOut(e) {
         
         // 次のフレームで再度実行
         requestAnimationFrame(this.update);
-      }
     }
-addEventListener('click', modalOut);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  new InertiaScroll();
+    new InertiaScroll();
 
-  const h2About = document.querySelector('#about h2');
-  gsap.fromTo(h2About, {y: 150, opacity: 0},{
-    duration:1,
-    opacity: 1,
-    ease: "power4.out",
-    y: 0,
-    scrollTrigger: {
-      trigger: 'h2',
-      start: 'top 80%',
-      end: 'top 30%',
-      once: false,
+    const h2About = document.querySelector('#about h2');
+    if (h2About) {
+        gsap.fromTo(h2About, {y: 150, opacity: 0},{
+            duration:1,
+            opacity: 1,
+            ease: "power4.out",
+            y: 0,
+            scrollTrigger: {
+                trigger: 'h2',
+                start: 'top 80%',
+                end: 'top 30%',
+                once: false,
+            }
+        });
     }
-    });
+    
     const h2Work = document.querySelector('#work h2');
-    gsap.fromTo(h2Work, {y: 150, opacity: 0},{
-      duration:1,
-      opacity: 1,
-      ease: "power4.out",
-      y: 0,
-      scrollTrigger: {
-        trigger: '#work h2',
-        start: 'top 80%',
-        end: 'top 30%',
-        once: false,
-      }
-      });
-  });
-
+    if (h2Work) {
+        gsap.fromTo(h2Work, {y: 150, opacity: 0},{
+            duration:1,
+            opacity: 1,
+            ease: "power4.out",
+            y: 0,
+            scrollTrigger: {
+                trigger: '#work h2',
+                start: 'top 80%',
+                end: 'top 30%',
+                once: false,
+            }
+        });
+    }
+});

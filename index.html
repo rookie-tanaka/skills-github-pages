@@ -6,7 +6,6 @@
     <title>tanakatomoki.com</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style_fixed.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -136,6 +135,60 @@
                             </div>
                         </div>
                     </div>
+                    <div class="content-wrap work">
+                        <h3>展示会サンプル</h3>
+                        <ul>
+                            <li>#Blender</li>
+                            <li>#HTML CSS</li>
+                            <li>#A-Frame</li>
+                        </ul>
+                        <p>印象派の画家であるアルフレッド・シスレーをテーマに、
+                            展示会のサンプルを制作しました。<br>
+                            Blenderで3Dモデルを作成し、A-Frameを用いてWeb上で展示会を体験できるようにしました。
+                        </p>
+                        <!-- モーダルを開くボタン -->
+                        <button class="modal-open js-modal-open">詳しく</button>
+                        <!-- モーダル本体 -->
+                        <div class="modal js-modal">
+                            <div class="modal-container">
+                            <!-- モーダルを閉じるボタン -->
+                            <div class="modal-close js-modal-close">×</div>
+                            <!-- モーダル内部のコンテンツ -->
+                            <div class="modal-content">
+                                <h3>展示会サンプル</h3>
+                                <a href="./work/museum/index.html">
+                                    <img src="./img/art-museum.webp" alt="展示会サンプルのスクリーンショット">
+                                </a>
+                                <ul>
+                                    <li>#Blender</li>
+                                    <li>#HTML CSS</li>
+                                    <li>#A-Frame</li>
+                                </ul>
+                                <h4>つくったきっかけ</h4>
+                                <p>印象派の画家を取り上げてキュレーションを行う課題があり、<br>
+                                    我々のグループはアルフレッドシスレーとグラスをテーマに企画を進めました。<br>
+                                    その際、課題提示には表現方法は自由と明記されていたため、<br>
+                                    パノラマで展示会場を見ることができたら面白く、伝わりやすいのではないかと考え制作しました。<br>
+
+
+
+                                </p>
+                                <h4>制作時間</h4>   
+                                <p>モデリング: 10時間ほど<br>
+                                    コーディング: 3時間ほど(Perplexity、Claude利用)
+                                </p>
+                                <h4>つくる上で難しかったこと</h4>
+                                <h5>infoアイコンの位置調整</h5>
+                                <p>会場は3dオブジェクトでなく、背景画像となっています。<br>
+                                    infoアイコンをblenderでの絵画の位置どおりに配置しようとすると、<br>
+                                    どうしても違和感が生じてしまいます。<br>
+                                    そのため、A-FrameのVisual Inspectorを用いて、位置の調整を繰り返し、<br>
+                                    カメラから違和感のない配置になるよう、調整しました。
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
@@ -160,6 +213,6 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <!-- オリジナルファイル：<script src="./js/script.js"></script> -->
-    <script src="./js/script_fixed.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
