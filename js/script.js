@@ -99,116 +99,130 @@ openButtons.forEach((openButton, index) => {
     }
 });
 
-class InertiaScroll {
-    constructor() {
-        // DOM要素
-        this.container = document.querySelector('.scroll-container');
-        this.content = document.querySelector('.scroll-content');
+/**
+ * 改良版ホリゾンタルスクロール
+ * シームレスなループアニメーション
+ */
+class SmoothHorizontalScroll {
+    constructor(containerSelector, options = {}) {
+        this.container = document.querySelector(containerSelector);
+        if (!this.container) return;
         
-        // スクロール関連の変数
-        this.scrollHeight = 0;
-        this.windowHeight = 0;
-        this.maxScrollY = 0;
+        this.scrollContent = this.container.querySelector('.scroll-content');
         
-        // 現在位置と目標位置
-        this.currentY = 0;
-        this.targetY = 0;
+        // 設定
+        this.speed = options.speed || 1;
+        this.direction = options.direction || 1; // 1: 左へ, -1: 右へ
+        this.isPlaying = true;
         
-        // イナーシャ効果のパラメータ
-        this.ease = 0.1; // 小さいほど滑らかで遅い
+        // アニメーション変数
+        this.position = 0;
+        this.contentWidth = 0;
         
-        // イベントリスナーのバインド
-        this.onResize = this.onResize.bind(this);
-        this.onWheel = this.onWheel.bind(this);
-        this.onTouchStart = this.onTouchStart.bind(this);
-        this.onTouchMove = this.onTouchMove.bind(this);
-        this.update = this.update.bind(this);
-        
-        // 初期化
         this.init();
     }
     
     init() {
-        // サイズの設定
-        this.onResize();
+        this.setupContent();
+        this.calculateDimensions();
+        this.startAnimation();
         
-        // イベントリスナーの設定
-        window.addEventListener('resize', this.onResize);
-        this.container.addEventListener('wheel', this.onWheel);
-        this.container.addEventListener('touchstart', this.onTouchStart);
-        this.container.addEventListener('touchmove', this.onTouchMove);
+        // リサイズ対応
+        window.addEventListener('resize', () => {
+            this.calculateDimensions();
+        });
         
-        // アニメーションループの開始
-        this.update();
+        // ホバーで一時停止
+        this.container.addEventListener('mouseenter', () => {
+            this.pause();
+        });
+        
+        this.container.addEventListener('mouseleave', () => {
+            this.play();
+        });
     }
     
-    onResize() {
-        // コンテンツの高さを計算
-        this.scrollHeight = this.content.scrollHeight;
-        this.windowHeight = window.innerHeight;
-        this.maxScrollY = this.scrollHeight - this.windowHeight;
-    }
-    
-    onWheel(e) {
-        // デフォルトのスクロール動作を防止
-        e.preventDefault();
+    setupContent() {
+        // 既存のHTMLの重複コンテンツを利用
+        const items = this.scrollContent.children;
+        const itemsArray = Array.from(items);
         
-        // ターゲット位置を更新（ホイールの移動量を加算）
-        this.targetY += e.deltaY * 1.5; // 係数で感度調整可能
-        
-        // 範囲を制限
-        this.targetY = Math.max(0, Math.min(this.targetY, this.maxScrollY));
-    }
-    
-    // タッチ関連の変数
-    touchStartY = 0;
-    lastTouchY = 0;
-    
-    onTouchStart(e) {
-        // タッチ開始位置を記録
-        this.touchStartY = e.touches[0].clientY;
-        this.lastTouchY = this.touchStartY;
-    }
-    
-    onTouchMove(e) {
-        // デフォルトのスクロール動作を防止
-        e.preventDefault();
-        
-        // 現在のタッチ位置
-        const currentTouchY = e.touches[0].clientY;
-        
-        // 前回のタッチ位置との差分を計算
-        const deltaY = this.lastTouchY - currentTouchY;
-        
-        // ターゲット位置を更新
-        this.targetY += deltaY * 2; // 係数で感度調整可能
-        
-        // 範囲を制限
-        this.targetY = Math.max(0, Math.min(this.targetY, this.maxScrollY));
-        
-        // 前回のタッチ位置を更新
-        this.lastTouchY = currentTouchY;
-    }
-    
-    update() {
-        // 現在位置をターゲット位置に徐々に近づける（イナーシャ効果）
-        this.currentY += (this.targetY - this.currentY) * this.ease;
-        
-        // 小さすぎる変化は四捨五入して停止させる（パフォーマンス向上）
-        if (Math.abs(this.targetY - this.currentY) < 0.1) {
-            this.currentY = this.targetY;
+        // 3セット分に拡張（シームレスループのため）
+        for (let i = 0; i < 2; i++) {
+            itemsArray.forEach(item => {
+                const clone = item.cloneNode(true);
+                this.scrollContent.appendChild(clone);
+            });
         }
-        
-        // transformでY位置を設定
-        this.content.style.transform = `translateY(${-this.currentY}px)`;
-        
-        // 次のフレームで再度実行
-        requestAnimationFrame(this.update);
+    }
+    
+    calculateDimensions() {
+        this.contentWidth = this.scrollContent.scrollWidth / 3; // 3セット中の1セット分
+    }
+    
+    startAnimation() {
+        const animate = () => {
+            if (this.isPlaying) {
+                this.position += this.speed * this.direction;
+                
+                // シームレスループ
+                if (this.direction > 0 && this.position >= this.contentWidth) {
+                    this.position = 0;
+                } else if (this.direction < 0 && this.position <= -this.contentWidth) {
+                    this.position = 0;
+                }
+                
+                this.scrollContent.style.transform = `translateX(${-this.position}px)`;
+            }
+            
+            requestAnimationFrame(animate);
+        };
+        animate();
+    }
+    
+    // 制御メソッド
+    play() {
+        this.isPlaying = true;
+    }
+    
+    pause() {
+        this.isPlaying = false;
+    }
+    
+    toggle() {
+        this.isPlaying = !this.isPlaying;
+    }
+    
+    reverse() {
+        this.direction *= -1;
+    }
+    
+    setSpeed(speed) {
+        this.speed = speed;
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    new InertiaScroll();
+    // CSSアニメーションを無効化
+    const scrollContents = document.querySelectorAll('.scroll-content');
+    scrollContents.forEach(content => {
+        content.style.animation = 'none';
+    });
+    
+    // 1番目のスクロールコンテナ
+    const scroll1 = new SmoothHorizontalScroll('.scroll-container:nth-of-type(1)', {
+        speed: 1,
+        direction: 1
+    });
+    
+    // 2番目のスクロールコンテナ（逆方向）
+    const scroll2 = new SmoothHorizontalScroll('.scroll-container:nth-of-type(2)', {
+        speed: 1.2,
+        direction: -1
+    });
+    
+    // デバッグ用: グローバルに公開
+    window.scrollAnimations = { scroll1, scroll2 };
 
     const h2About = document.querySelector('#about h2');
     if (h2About) {
