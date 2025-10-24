@@ -1,183 +1,75 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>tanakatomoki.com</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./css/output.css" rel="stylesheet" />
     <script src="//unpkg.com/alpinejs" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=M+PLUS+1p:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
-</head>
-<body class="p-8 sm:px-[25%]">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=M+PLUS+1p:wght@100;300;400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="p-8 sm:px-[25%]">
     <header>
-        <div>
-            <div class="logo mb-8">
-                <span>------------------------------------<br>
-                    --------- tanakatomoki.com ---------<br>
-                    ------------------------------------<br>
-                    ----------- portfolio --------------<br>
-                    ------------------------------------
-                </span></div>
-            <ul class="flex justify-center gap-8 mb-8">
-                    <li><a href="#about">about</a></li>
-                    <li><a href="#work">work</a></li>
-            </ul>  
+      <div>
+        <div class="logo mb-8">
+          <span
+            >------------------------------------<br/>
+            --------- tanakatomoki.com ---------<br/>
+            ------------------------------------<br/>
+            ----------- portfolio --------------<br/>
+            ------------------------------------
+          </span>
         </div>
+        <ul class="flex justify-center gap-8 mb-8">
+          <li><a href="./index.html">about</a></li>
+          <li><a href="./work/work.html">work</a></li>
+        </ul>
+      </div>
     </header>
-    <main>
-        <section>
-            <h2 class="mb-8" id="about">about</h2>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-8">
-                <div class="relative w-48 h-48 flex-shrink-0">
-                    <img src="./img/me.jpg" alt="プロフィール" class="absolute w-full h-full object-cover rounded-lg">
-                </div>
-                <div class="w-48 h-48 items-center flex-shrink-0">
-                    <h3 class="mb-2">名前</h3>
-                    <p class="mb-4">田中智貴</p>
-                    <h3 class="mb-2">出身地</h3>
-                    <p class="mb-4">北海道</p>
-                    <h3 class="mb-2">趣味</h3>
-                    <ul class="flex justify-center flex-wrap gap-2">
-                        <li>ゲーム</li>
-                        <li>音楽</li>
-                        <li>読書</li>
-                    </ul>
-                </div>
-            </div>
-            
-        </section>
-        <p class="my-16">----------------------------------------</p>
-        <section>
-            <h2 class="mb-8" id="work">work</h2>
-            <div class="works">
-                <div class="mb-8">
-                    <h3 class="mb-4">HUSイルミネーション映像課題</h3>
-                    <ul>
-                        <li>#音楽</li>
-                        <li>#映像</li>
-                        <li>#ロゴアニメーション</li>
-                    </ul>
-                    <p>北海道科学大学のキャンパスイルミネーションを紹介する映像を
-                        チームで制作しました。私は映像の一部と音楽、ロゴアニメーションを
-                        担当しました。
-                    </p>
-                        <!-- モーダルを開くボタン -->
-                        <button class="modal-open js-modal-open">詳しく</button>
-                        <!-- モーダル本体 -->
-                        <div class="modal js-modal">
-                            <div class="modal-container">
-                            <!-- モーダルを閉じるボタン -->
-                            <div class="modal-close js-modal-close">×</div>
-                            <!-- モーダル内部のコンテンツ -->
-                            <div class="modal-content">
-                                <h3>HUSイルミネーション映像課題</h3>
-                                <div class="youtube">
-                                    <iframe 
-                                    src="https://www.youtube.com/embed/f1BY3I1tJFw?si=6v7vk6JUxS-IEydZ" 
-                                    title="YouTube video player" 
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                    referrerpolicy="strict-origin-when-cross-origin" 
-                                    allowfullscreen></iframe>
-                                </div>
-                                <ul>
-                                    <li>#音楽</li>
-                                    <li>#映像</li>
-                                    <li>#ロゴアニメーション</li>
-                                </ul>
-                                <p>北海道科学大学のキャンパスイルミネーションを紹介する映像を
-                                    チームで制作しました。私は映像の一部と音楽、ロゴアニメーションを
-                                    担当しました。
-                                </p>
-                            </div>
-                            </div>
-                        </div>
-                </div>
-                <div>
-                        <h3>展示会サンプル</h3>
-                        <ul>
-                            <li>#Blender</li>
-                            <li>#HTML CSS</li>
-                            <li>#A-Frame</li>
-                        </ul>
-                        <p>印象派の画家であるアルフレッド・シスレーをテーマに、
-                            展示会のサンプルを制作しました。<br>
-                            Blenderで3Dモデルを作成し、A-Frameを用いてWeb上で展示会を体験できるようにしました。
-                        </p>
-                        <div x-data="{ isOpen: false }">
-                        <!-- モーダルを開くボタン -->
-                        <button @click="isOpen = true" class="bg-blue-600 text-white px-4 py-2 rounded">
-                            詳しく
-                        </button>
-
-                        <!-- モーダル本体（背景と中身） -->
-                        <div 
-                                x-show="isOpen"
-                                class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
-                                style="display: none;"
-                        ></div>
-
-                        
-                        <div 
-                            x-show="isOpen" 
-                            class="fixed w-1/2 max-h-[80vh] inset-0 m-auto overflow-auto inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 rounded-lg"
-                            style="display: none;"
-                        >
-                            <!-- ここに @click.away をつける -->
-                            <div 
-                            class="bg-white rounded-lg shadow-lg p-6 relative"
-                            @click.away="isOpen = false"
-                            >
-                                <h3>展示会サンプル</h3>
-                                <a class="" href="./work/museum/index.html">
-                                    <img src="./img/art-museum.webp" alt="展示会サンプルのスクリーンショット">
-                                </a>
-                                <ul>
-                                    <li>#Blender</li>
-                                    <li>#HTML CSS</li>
-                                    <li>#A-Frame</li>
-                                </ul>
-                                <h4>つくったきっかけ</h4>
-                                <p>印象派の画家を取り上げてキュレーションを行う課題があり、<br>
-                                    我々のグループはアルフレッドシスレーとグラスをテーマに企画を進めました。<br>
-                                    その際、課題提示には表現方法は自由と明記されていたため、<br>
-                                    パノラマで展示会場を見ることができたら面白く、伝わりやすいのではないかと考え制作しました。<br>
-
-
-
-                                </p>
-                                <h4>制作時間</h4>   
-                                <p>モデリング: 10時間ほど<br>
-                                    コーディング: 3時間ほど(Perplexity、Claude利用)
-                                </p>
-                                <h4>つくる上で難しかったこと</h4>
-                                <h5>infoアイコンの位置調整</h5>
-                                <p>会場は3dオブジェクトでなく、背景画像となっています。<br>
-                                    infoアイコンをblenderでの絵画の位置どおりに配置しようとすると、<br>
-                                    どうしても違和感が生じてしまいます。<br>
-                                    そのため、A-FrameのVisual Inspectorを用いて、位置の調整を繰り返し、<br>
-                                    カメラから違和感のない配置になるよう、調整しました。
-                                </p>
-                                <button @click="isOpen = false" class="absolute top-2 right-2 text-gray-600 hover:text-black text-xl">
-                                    &times;
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <main class="mb-8">
+      <section>
+        <h2 class="mb-8" id="about">about</h2>
+        <div
+          class="flex flex-col sm:flex-row justify-center items-center gap-8"
+        >
+          <div class="relative w-48 h-48 flex-shrink-0">
+            <img
+              src="./img/me.jpg"
+              alt="プロフィール"
+              class="absolute w-full h-full object-cover rounded-lg"
+            />
+          </div>
+          <div class="w-48 h-48 items-center flex-shrink-0">
+            <h3 class="mb-2">名前</h3>
+            <p class="mb-4">田中智貴</p>
+            <h3 class="mb-2">出身地</h3>
+            <p class="mb-4">北海道</p>
+            <h3 class="mb-2">趣味</h3>
+            <ul class="flex justify-center flex-wrap gap-2">
+              <li>ゲーム</li>
+              <li>音楽</li>
+              <li>読書</li>
+            </ul>
+          </div>
         </div>
+      </section>
     </main>
     <footer>
-        <div class="wave-text">このサイトは開発中です</div>
-        <span>随時更新していきますので、お楽しみに！</span>
+      <div class="wave-text">このサイトは開発中です</div>
+      <span>随時更新していきますので、お楽しみに！</span>
     </footer>
-    <script src="https://kit.fontawesome.com/e615a7eb50.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/e615a7eb50.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="./js/script.js"></script>
-</body>
+    <script></script>
+  </body>
 </html>

@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Unifont";
+  src: url("../webfonts/unifont_jp-16.0.02.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@theme {
+  --color-primary: #7777ff;
+  --color-background: #fcfcf0;
+}
+@layer base {
+  body {
+    background-color: var(--color-background);
+    text-align: center;
+    font-family: "Unifont", sans-serif;
+    -webkit-font-smoothing: none; /* アンチエイリアスを無効化（ギザギザに） */
+    font-smooth: none; /* 将来的な標準化を見越した指定 */
+  }
+} /*# sourceMappingURL=style.css.map */

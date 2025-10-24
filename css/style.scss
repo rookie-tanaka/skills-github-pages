@@ -1,15 +1,14 @@
 @font-face {
-  font-family: 'Unifont';
-  src: url('../webfonts/unifont_jp-16.0.02.otf') format('opentype');
+  font-family: "Unifont";
+  src: url("../webfonts/unifont_jp-16.0.02.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
-
-body{
-  background-color: #fcfcf0;
+body {
+  background-color: --;
   text-align: center;
-  font-family: 'Unifont', sans-serif;
+  font-family: "Unifont", sans-serif;
   -webkit-font-smoothing: none; /* アンチエイリアスを無効化（ギザギザに） */
-  font-smooth: none;           /* 将来的な標準化を見越した指定 */
+  font-smooth: none; /* 将来的な標準化を見越した指定 */
 }
