@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Unifont";
   src: url("../webfonts/unifont_jp-16.0.02.otf") format("opentype");
@@ -7,23 +8,8 @@
 }
 body {
   background-color: #fcfcf0;
-  padding: 16px 25%;
   text-align: center;
   font-family: "Unifont", sans-serif;
-}
-
-.logo {
-  margin-bottom: 32px;
-}
-
-.nav-wrap {
-  margin-bottom: 16px;
-}
-
-.nav-wrap ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 0;
+  -webkit-font-smoothing: none; /* アンチエイリアスを無効化（ギザギザに） */
+  font-smooth: none; /* 将来的な標準化を見越した指定 */
 }/*# sourceMappingURL=style.css.map */
