@@ -8,13 +8,13 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=M+PLUS+1p:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body class="p-8 sm:px-[25%]">
     <header>
         <div>
             <div class="logo mb-8">
-                <span>------------------------------------<br>
+                <span>
+                    ------------------------------------<br>
                     --------- tanakatomoki.com ---------<br>
                     ------------------------------------<br>
                     ----------- portfolio --------------<br>
@@ -29,118 +29,61 @@
     <main>
         <section>
             <h2 class="mb-8">work</h2>
-                <div>
-                    <h3 class="mb-2">HUSイルミネーション映像課題</h3>
-                    <ul class="flex justify-center gap-2 mb-2">
-                        <li>#音楽</li>
-                        <li>#映像</li>
-                        <li>#ロゴアニメーション</li>
-                    </ul>
-                    <p class="mb-2">北海道科学大学のキャンパスイルミネーションを紹介する映像を
-                        チームで制作しました。私は映像の一部と音楽、ロゴアニメーションを
-                        担当しました。
-                    </p>
-                        <!-- モーダルを開くボタン -->
-                        <button class="modal-open js-modal-open">詳しく</button>
-                        <!-- モーダル本体 -->
-                        <div class="modal js-modal">
-                            <div class="modal-container">
-                            <!-- モーダルを閉じるボタン -->
-                            <div class="modal-close js-modal-close">×</div>
-                            <!-- モーダル内部のコンテンツ -->
-                            <div class="modal-content">
-                                <h3>HUSイルミネーション映像課題</h3>
-                                <div class="youtube">
-                                    <iframe 
-                                    src="https://www.youtube.com/embed/f1BY3I1tJFw?si=6v7vk6JUxS-IEydZ" 
-                                    title="YouTube video player" 
+            <div>
+                <h3 class="mb-2">HUSイルミネーション映像課題</h3>
+                <ul class="flex justify-center gap-2 mb-2">
+                    <li>#音楽</li>
+                    <li>#映像</li>
+                    <li>#ロゴアニメーション</li>
+                </ul>
+                <p class="mb-2">北海道科学大学のキャンパスイルミネーションを紹介する映像を
+                    チームで制作しました。私は映像の一部と音楽、ロゴアニメーションを
+                    担当しました。
+                </p>
+                <!-- モーダルを開くボタン -->
+                <button class="modal-open js-modal-open">詳しく</button>
+                <!-- モーダル本体 -->
+                <div class="modal js-modal">
+                    <div class="modal-container">
+                        <!-- モーダルを閉じるボタン -->
+                        <div class="modal-close js-modal-close">×</div>
+                        <!-- モーダル内部のコンテンツ -->
+                        <div class="modal-content">
+                            <h3>HUSイルミネーション映像課題</h3>
+                            <div class="youtube">
+                                <iframe src="https://www.youtube.com/embed/f1BY3I1tJFw?si=6v7vk6JUxS-IEydZ"
+                                    title="YouTube video player"
                                     frameborder="0" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                                     referrerpolicy="strict-origin-when-cross-origin" 
                                     allowfullscreen></iframe>
-                                </div>
-                                <ul>
-                                    <li>#音楽</li>
-                                    <li>#映像</li>
-                                    <li>#ロゴアニメーション</li>
-                                </ul>
-                                <p>北海道科学大学のキャンパスイルミネーションを紹介する映像を
-                                    チームで制作しました。私は映像の一部と音楽、ロゴアニメーションを
-                                    担当しました。
-                                </p>
                             </div>
-                            </div>
-                        </div>
-                </div>
-                <div>
-                    <h3 class="mb-2">展示会サンプル</h3>
-                    <ul class="flex justify-center gap-2 mb-2">
-                        <li>#Blender</li>
-                        <li>#HTML/CSS</li>
-                        <li>#A-Frame</li>
-                    </ul>
-                    <p class="mb-2">印象派の画家であるアルフレッド・シスレーをテーマに、
-                        展示会のサンプルを制作しました。<br>
-                        Blenderで3Dモデルを作成し、A-Frameを用いてWeb上で展示会を体験できるようにしました。
-                    </p>
-                    <div x-data="{ isOpen: false }">
-                    <!-- モーダルを開くボタン -->
-                    <button @click="isOpen = true" class="bg-primary text-white px-4 py-2 rounded">
-                        詳しく
-                    </button>
-
-                    <!-- モーダル本体（背景と中身） -->
-                    <div 
-                            x-show="isOpen"
-                            class="fixed inset-0 bg-opacity-40 backdrop-blur-sm"
-                            style="display: none;"
-                    ></div>
-
-                        
-                    <div 
-                        x-show="isOpen" 
-                        class="fixed w-1/2 max-h-[80vh] inset-0 m-auto overflow-auto inset-0 flex items-center justify-center z-50 rounded-lg"
-                        style="display: none;"
-                    >
-                        <!-- ここに @click.away をつける -->
-                        <div 
-                        class="bg-background rounded-lg shadow-lg p-6 relative"
-                        @click.away="isOpen = false"
-                        >
-                            <h3>展示会サンプル</h3>
-                            <a class="" href="./work/museum/index.html">
-                                <img src="./img/art-museum.webp" alt="展示会サンプルのスクリーンショット">
-                            </a>
                             <ul>
-                                <li>#Blender</li>
-                                <li>#HTML CSS</li>
-                                <li>#A-Frame</li>
+                                <li>#音楽</li>
+                                <li>#映像</li>
+                                <li>#ロゴアニメーション</li>
                             </ul>
-                            <h4>つくったきっかけ</h4>
-                            <p>印象派の画家を取り上げてキュレーションを行う課題があり、<br>
-                                我々のグループはアルフレッドシスレーとグラスをテーマに企画を進めました。<br>
-                                その際、課題提示には表現方法は自由と明記されていたため、<br>
-                                パノラマで展示会場を見ることができたら面白く、伝わりやすいのではないかと考え制作しました。
+                            <p>北海道科学大学のキャンパスイルミネーションを紹介する映像を
+                                チームで制作しました。私は映像の一部と音楽、ロゴアニメーションを
+                                担当しました。
                             </p>
-                                <h4>制作時間</h4>   
-                                <p>モデリング: 10時間ほど<br>
-                                    コーディング: 3時間ほど(Perplexity、Claude利用)
-                                </p>
-                                <h4>つくる上で難しかったこと</h4>
-                                <h5>infoアイコンの位置調整</h5>
-                                <p>会場は3dオブジェクトでなく、背景画像となっています。<br>
-                                    infoアイコンをblenderでの絵画の位置どおりに配置しようとすると、<br>
-                                    どうしても違和感が生じてしまいます。<br>
-                                    そのため、A-FrameのVisual Inspectorを用いて、位置の調整を繰り返し、<br>
-                                    カメラから違和感のない配置になるよう、調整しました。
-                                </p>
-                                <button @click="isOpen = false" class="absolute top-2 right-2 text-gray-600 hover:text-black text-xl">
-                                    &times;
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div>
+                <h3 class="mb-2">展示会サンプル</h3>
+                <ul class="flex justify-center gap-2 mb-2">
+                    <li>#Blender</li>
+                    <li>#HTML/CSS</li>
+                    <li>#A-Frame</li>
+                </ul>
+                <p class="mb-2">印象派の画家であるアルフレッド・シスレーをテーマに、
+                    展示会のサンプルを制作しました。<br>
+                    Blenderで3Dモデルを作成し、A-Frameを用いてWeb上で展示会を体験できるようにしました。
+                </p>
+                <button><a href="museum-info.html">詳しく</a></button>
+            </div>
         </section>
     </main>
     <footer>
