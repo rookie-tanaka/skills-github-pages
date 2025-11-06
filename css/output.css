@@ -201,9 +201,6 @@
   .hidden {
     display: none;
   }
-  .table {
-    display: table;
-  }
   .aspect-video {
     aspect-ratio: var(--aspect-video);
   }
@@ -222,14 +219,8 @@
   .w-full {
     width: 100%;
   }
-  .flex-shrink {
-    flex-shrink: 1;
-  }
   .flex-shrink-0 {
     flex-shrink: 0;
-  }
-  .border-collapse {
-    border-collapse: collapse;
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
@@ -289,78 +280,15 @@
   .text-\[1\.8vw\] {
     font-size: 1.8vw;
   }
-  .text-\[1vw\] {
-    font-size: 1vw;
-  }
-  .text-\[2vw\] {
-    font-size: 2vw;
-  }
-  .text-\[3vw\] {
-    font-size: 3vw;
-  }
-  .text-\[4vw\] {
-    font-size: 4vw;
-  }
-  .text-\[6px\] {
-    font-size: 6px;
-  }
-  .text-\[6vw\] {
-    font-size: 6vw;
-  }
-  .text-\[8px\] {
-    font-size: 8px;
-  }
-  .text-\[9px\] {
-    font-size: 9px;
-  }
-  .leading-2 {
-    --tw-leading: calc(var(--spacing) * 2);
-    line-height: calc(var(--spacing) * 2);
-  }
-  .leading-3 {
-    --tw-leading: calc(var(--spacing) * 3);
-    line-height: calc(var(--spacing) * 3);
-  }
-  .leading-4 {
-    --tw-leading: calc(var(--spacing) * 4);
-    line-height: calc(var(--spacing) * 4);
-  }
-  .leading-\[1\.8vw\] {
-    --tw-leading: 1.8vw;
-    line-height: 1.8vw;
-  }
-  .leading-\[2\.5vw\] {
-    --tw-leading: 2.5vw;
-    line-height: 2.5vw;
-  }
   .leading-\[2vw\] {
     --tw-leading: 2vw;
     line-height: 2vw;
-  }
-  .leading-\[3vw\] {
-    --tw-leading: 3vw;
-    line-height: 3vw;
-  }
-  .leading-\[4vw\] {
-    --tw-leading: 4vw;
-    line-height: 4vw;
-  }
-  .leading-\[vw\] {
-    --tw-leading: vw;
-    line-height: vw;
   }
   .whitespace-pre {
     white-space: pre;
   }
   .text-primary {
     color: var(--color-primary);
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
@@ -382,12 +310,6 @@
   .sm\:px-\[25\%\] {
     @media (width >= 40rem) {
       padding-inline: 25%;
-    }
-  }
-  .sm\:text-base {
-    @media (width >= 40rem) {
-      font-size: var(--text-base);
-      line-height: var(--tw-leading, var(--text-base--line-height));
     }
   }
   .sm\:text-xs {
@@ -459,11 +381,6 @@
 @property --tw-leading {
   syntax: "*";
   inherits: false;
-}
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
 @property --tw-blur {
   syntax: "*";
@@ -564,7 +481,6 @@
       --tw-skew-y: initial;
       --tw-border-style: solid;
       --tw-leading: initial;
-      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;
