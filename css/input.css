@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@800&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Unifont";
+  src: url("../webfonts/unifont_jp-16.0.02.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@theme {
+  --color-primary: #7777ff;
+  --color-background: #fcfcf0;
+  --font-sixtyfour: 'Sixtyfour Convergence', monospace;
+  --font-sono: 'Sono', monospace;
+}
+@layer base {
+  body {
+      background-color: var(--color-background);
+      background-image: url("/img/main.JPG");
+      background-size: cover;
+      background-position: left center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      font-family: "Unifont", sans-serif;
+      -webkit-font-smoothing: none; /* アンチエイリアスを無効化（ギザギザに） */
+      font-smooth: none; /* 将来的な標準化を見越した指定 */
+      color: rgb(12, 11, 10);
+  }
+} /*# sourceMappingURL=style.css.map */
+
+@layer utilities {
+    .font-accent {
+        font-family: var(--font-sono);
+        -webkit-font-smoothing: antialiased; /* Webkit系ブラウザでアンチエイリアスを再度有効化 */
+        font-smooth: auto; /* アンチエイリアスを再度有効化 */
+    }
+}

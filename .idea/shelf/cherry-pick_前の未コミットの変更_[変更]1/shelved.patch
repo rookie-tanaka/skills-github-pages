@@ -1,0 +1,146 @@
+Index: work/glare-illusion/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/work/glare-illusion/index.html b/work/glare-illusion/index.html
+new file mode 100644
+--- /dev/null	(date 1761475364210)
++++ b/work/glare-illusion/index.html	(date 1761475364210)
+@@ -0,0 +1,13 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <title>グレア錯視</title>
++    <script src="https://cdn.jsdelivr.net/npm/p5@2.0.5/lib/p5.js"></script>
++    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
++    <script src="index.js"></script>
++</head>
++<body class="p-0 m-0 overflow-hidden">
++</body>
++
++</html>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+new file mode 100644
+--- /dev/null	(date 1761475414642)
++++ b/.idea/workspace.xml	(date 1761475414642)
+@@ -0,0 +1,111 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="db2dfd2f-1bce-4c25-879d-af20d9f54e49" name="変更" comment="パスの修正&#10;&#10;(cherry picked from commit 910f13d36e4d221310f8d796a2f143ff56f49195)">
++      <changelist_data name="Tanaka" email="tonkatu0741@gmail.com" date="1761386955000" automatic="true" />
++      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/work/glare-illusion/index.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
++    </list>
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="HTML File" />
++      </list>
++    </option>
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 8
++}</component>
++  <component name="ProjectId" id="34UxvzepJpGMXSNooSsP316KiRi" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "DefaultHtmlFileTemplate": "HTML File",
++    "JavaScript デバッグ.index.html.executor": "Debug",
++    "ModuleVcsDetector.initialDetectionPerformed": "true",
++    "Node.js.index.js.executor": "Run",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
++    "RunOnceActivity.git.unshallow": "true",
++    "git-widget-placeholder": "d627f2ba",
++    "last_opened_file_path": "/Users/tanakatomoki/Documents/Homepage/work/glare-illustion",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "settings.editor.selected.configurable": "preferences.pluginManager",
++    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
++    "vue.rearranger.settings.migration": "true"
++  }
++}]]></component>
++  <component name="RecentsManager">
++    <key name="CopyFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/work/glare-illustion" />
++    </key>
++  </component>
++  <component name="SharedIndexes">
++    <attachedChunks>
++      <set>
++        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.26830.93" />
++      </set>
++    </attachedChunks>
++  </component>
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="デフォルトタスク">
++      <changelist id="db2dfd2f-1bce-4c25-879d-af20d9f54e49" name="変更" comment="" />
++      <created>1761282186211</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1761282186211</updated>
++      <workItem from="1761282187565" duration="925000" />
++      <workItem from="1761302439630" duration="1714000" />
++      <workItem from="1761304225670" duration="143000" />
++      <workItem from="1761305411078" duration="78000" />
++      <workItem from="1761305507486" duration="1854000" />
++      <workItem from="1761377612178" duration="6457000" />
++    </task>
++    <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="retrostyle" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
