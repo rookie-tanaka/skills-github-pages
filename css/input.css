@@ -4,8 +4,40 @@
 
 @font-face {
   font-family: "Unifont";
-  src: url("../webfonts/unifont_jp-16.0.02.otf") format("opentype");
+  src: url("../fonts/unifont_jp-16.0.02.otf") format("opentype");
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MOBO";
+  src: url("../fonts/MOBO-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MOBO";
+  src: url("../fonts/MOBO-ExtraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MOBO";
+  src: url("../fonts/MOBO-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MOBO";
+  src: url("../fonts/MOBO-SemiBold.otf") format("opentype");
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -28,6 +60,9 @@
       font-smooth: none; /* 将来的な標準化を見越した指定 */
       color: rgb(12, 11, 10);
   }
+    h1 {
+        font-weight: 600;
+    }
 } /*# sourceMappingURL=style.css.map */
 
 @layer utilities {
@@ -35,5 +70,11 @@
         font-family: var(--font-sono);
         -webkit-font-smoothing: antialiased; /* Webkit系ブラウザでアンチエイリアスを再度有効化 */
         font-smooth: auto; /* アンチエイリアスを再度有効化 */
+    }
+}
+
+@layer components{
+    .container {
+        @apply border rounded-lg flex flex-col items-center mb-8 bg-background;
     }
 }

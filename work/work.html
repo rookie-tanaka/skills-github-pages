@@ -23,7 +23,7 @@
         <li><a href="/lab/lab.html" class="text-primary">lab</a></li>
     </ul>
 </header>
-<main class="mb-8">
+<main class="mb-8 flex flex-col justify-center">
     <section>
         <div class="flex flex-col items-center">
             <p class="font-accent whitespace-pre leading-[2vw] text-[1.8vw] sm:leading-4 sm:text-xs mb-4"
@@ -34,7 +34,19 @@ _/    _/    _/  _/    _/  _/_/_/    _/_/
   _/  _/        _/_/    _/    _/  _/    _/</p>
         </div>
         <h2 class="mb-8 text-center">- work -</h2>
-        <div class="border rounded-lg flex flex-col items-center mb-8 bg-background">
+        <div class="container text-center p-8">
+                <h1 class="mb-8">イナズマトーナメント</h1>
+                <h2 class="mb-4">概要</h2>
+                <p></p>
+                <h2 class="mb-4 mt-8">使用技術</h2>
+                <ul class="flex gap-8 text-center">
+                    <li>Rust</li>
+                    <li>Web</li>
+                </ul>
+                <h2 class="mb-4 mt-8">URL</h2>
+                <a class="text-primary" href="https://rookie-tanaka.github.io/InazumaTournament/">InazumaTournament</a>
+        </div>
+        <div class="container">
             <iframe
                     class="aspect-video w-full rounded-lg h-auto"
                     src="https://www.youtube.com/embed/f1BY3I1tJFw?si=6v7vk6JUxS-IEydZ"
@@ -45,24 +57,24 @@ _/    _/    _/  _/    _/  _/_/_/    _/_/
                     allowfullscreen>
             </iframe>
             <div class="text-center p-4">
-                <h3 class="mb-2">HUSイルミネーション映像課題</h3>
+                <h1 class="mb-2">HUSイルミネーション映像課題</h1>
                 <ul class="flex justify-center gap-2 mb-2">
                     <li>#音楽</li>
                     <li>#映像</li>
                     <li>#ロゴアニメーション</li>
                 </ul>
-                <p class="mb-2">北海道科学大学のキャンパスイルミネーションを紹介する映像を
+                <p class="mb-2 w-full text-left">北海道科学大学のキャンパスイルミネーションを紹介する映像を
                     チームで制作しました。私は映像の一部と音楽、ロゴアニメーションを
                     担当しました。
                 </p>
             </div>
         </div>
-        <div class="border rounded-lg flex flex-col items-center mb-8 bg-background">
+        <div class="container">
             <a class="" href="/work/museum/index.html">
                 <img class="rounded-lg"src="/img/art-museum.webp" alt="展示会サンプルのスクリーンショット">
             </a>
             <div class="text-center p-4">
-                <h3 class="mb-2">展示会サンプル</h3>
+                <h1 class="mb-2">展示会サンプル</h1>
                 <ul class="flex justify-center gap-2 mb-2">
                     <li>#Blender</li>
                     <li>#HTML/CSS</li>
@@ -94,6 +106,7 @@ _/    _/    _/  _/    _/  _/_/_/    _/_/
         </div>
 
     </section>
+
 </main>
 <footer class="text-center">
     <div class="wave-text">このサイトは開発中です</div>
@@ -101,5 +114,19 @@ _/    _/    _/  _/    _/  _/_/_/    _/_/
 </footer>
 <script src="https://kit.fontawesome.com/e615a7eb50.js" crossorigin="anonymous"></script>
 <script src="/js/script.js"></script>
+<script>
+    function stickyHeader() {
+        return {
+            showHeader: false,
+            triggerTop: 0,
+            init() {
+                this.triggerTop = this.$refs.trigger.offsetTop;
+            },
+            onScroll() {
+                this.showHeader = window.pageYOffset >= this.triggerTop;
+            }
+        }
+    }
+</script>
 </body>
 </html>

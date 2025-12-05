@@ -5,10 +5,77 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dc322fa-b2b8-40f8-9799-73e62b05fdd4" name="変更" comment="ロゴAAのサイズ調整">
-      <change afterPath="$PROJECT_DIR$/lab/lab.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/MOBO-Bold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/MOBO-ExtraLight.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/MOBO-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/MOBO-SemiBold.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/input.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/input.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/output.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/output.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/lab.html" beforeDir="false" afterPath="$PROJECT_DIR$/lab/lab.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/.rustc_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/actix-codec-6d8717dbe769f17b/lib-actix_codec" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/actix-codec-6d8717dbe769f17b/lib-actix_codec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/actix-http-b30fa9451ba8150e/lib-actix_http" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/actix-http-b30fa9451ba8150e/lib-actix_http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/actix-macros-2ee4de461432a140/lib-actix_macros" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/actix-macros-2ee4de461432a140/lib-actix_macros" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/actix-router-861cca49379fcc34/lib-actix_router" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/actix-router-861cca49379fcc34/lib-actix_router" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/actix-router-9e0c24d332fab34b/lib-actix_router" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/actix-router-9e0c24d332fab34b/lib-actix_router" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/actix-server-3dbb7544e9de1cea/lib-actix_server" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/actix-server-3dbb7544e9de1cea/lib-actix_server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/actix-web-546198304b3beb0a/lib-actix_web" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/actix-web-546198304b3beb0a/lib-actix_web" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/actix-web-codegen-fe39783edf518c11/lib-actix_web_codegen" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/actix-web-codegen-fe39783edf518c11/lib-actix_web_codegen" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/block-buffer-ac61de111c6b018c/lib-block_buffer" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/block-buffer-ac61de111c6b018c/lib-block_buffer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/cc-e309280e2e8bc191/lib-cc" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/cc-e309280e2e8bc191/lib-cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/cookie-6175e959afae4863/lib-cookie" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/cookie-6175e959afae4863/lib-cookie" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/cookie-69df98d65a94df65/run-build-script-build-script-build" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/cookie-69df98d65a94df65/run-build-script-build-script-build" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/crypto-common-7a8071435f54f93e/lib-crypto_common" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/crypto-common-7a8071435f54f93e/lib-crypto_common" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/derive_more-c0d629cbab17d01a/lib-derive_more" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/derive_more-c0d629cbab17d01a/lib-derive_more" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/derive_more-impl-8980a7bb1e873069/lib-derive_more_impl" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/derive_more-impl-8980a7bb1e873069/lib-derive_more_impl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/digest-c24868c874f32a4d/lib-digest" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/digest-c24868c874f32a4d/lib-digest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/displaydoc-d96a196ba5e7d9a3/lib-displaydoc" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/displaydoc-d96a196ba5e7d9a3/lib-displaydoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/generic-array-2cca608e63a63911/lib-generic_array" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/generic-array-2cca608e63a63911/lib-generic_array" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/generic-array-6511eb499fb29d25/run-build-script-build-script-build" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/generic-array-6511eb499fb29d25/run-build-script-build-script-build" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/h2-e7d6ccbdb9c6a565/lib-h2" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/h2-e7d6ccbdb9c6a565/lib-h2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/icu_collections-a4ea0e38a131c29e/lib-icu_collections" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/icu_collections-a4ea0e38a131c29e/lib-icu_collections" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/icu_locale_core-8db1f52c56195cec/lib-icu_locale_core" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/icu_locale_core-8db1f52c56195cec/lib-icu_locale_core" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/icu_normalizer-cc5325630cb616c2/lib-icu_normalizer" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/icu_normalizer-cc5325630cb616c2/lib-icu_normalizer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/icu_properties-050f3bc19d734f67/lib-icu_properties" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/icu_properties-050f3bc19d734f67/lib-icu_properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/icu_provider-14ae41228dc2df7a/lib-icu_provider" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/icu_provider-14ae41228dc2df7a/lib-icu_provider" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/idna-f9dee5a64f1b99ed/lib-idna" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/idna-f9dee5a64f1b99ed/lib-idna" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/idna_adapter-b6de9983bc340959/lib-idna_adapter" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/idna_adapter-b6de9983bc340959/lib-idna_adapter" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/potential_utf-2da9059bf80a3ede/lib-potential_utf" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/potential_utf-2da9059bf80a3ede/lib-potential_utf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/quote-c91d2323de6b1cb2/lib-quote" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/quote-c91d2323de6b1cb2/lib-quote" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/rust-web-app-7828b1afac0bbe7b/bin-rust-web-app" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/rust-web-app-7828b1afac0bbe7b/bin-rust-web-app" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/rust-web-app-ee823e2c87e52c0c/test-bin-rust-web-app" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/rust-web-app-ee823e2c87e52c0c/test-bin-rust-web-app" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/serde-10207881c88f8635/lib-serde" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/serde-10207881c88f8635/lib-serde" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/serde-1b86e7156f50ebfd/lib-serde" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/serde-1b86e7156f50ebfd/lib-serde" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/serde_core-ab7861efc0588d44/lib-serde_core" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/serde_core-ab7861efc0588d44/lib-serde_core" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/serde_derive-b0381b92d353af6a/lib-serde_derive" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/serde_derive-b0381b92d353af6a/lib-serde_derive" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/serde_urlencoded-955d0f8223cc9b24/lib-serde_urlencoded" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/serde_urlencoded-955d0f8223cc9b24/lib-serde_urlencoded" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/sha1-47e6e65b4c2d0d66/lib-sha1" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/sha1-47e6e65b4c2d0d66/lib-sha1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/syn-4ae9f51dff121967/lib-syn" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/syn-4ae9f51dff121967/lib-syn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/synstructure-ceab89d89f63ee05/lib-synstructure" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/synstructure-ceab89d89f63ee05/lib-synstructure" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/tinystr-4e1708cdcf5ccbe0/lib-tinystr" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/tinystr-4e1708cdcf5ccbe0/lib-tinystr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/tracing-1917e7fe0252ba18/lib-tracing" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/tracing-1917e7fe0252ba18/lib-tracing" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/tracing-attributes-b747672dcc25aec1/lib-tracing_attributes" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/tracing-attributes-b747672dcc25aec1/lib-tracing_attributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/url-a02603cb5e5217ca/lib-url" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/url-a02603cb5e5217ca/lib-url" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/yoke-3f21d2f98b52e8d7/lib-yoke" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/yoke-3f21d2f98b52e8d7/lib-yoke" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/yoke-derive-94919d0566078e79/lib-yoke_derive" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/yoke-derive-94919d0566078e79/lib-yoke_derive" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zerofrom-673f213048650bad/lib-zerofrom" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zerofrom-673f213048650bad/lib-zerofrom" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zerofrom-derive-6f766b776a9ee62e/lib-zerofrom_derive" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zerofrom-derive-6f766b776a9ee62e/lib-zerofrom_derive" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zerotrie-6302b53e7def15b2/lib-zerotrie" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zerotrie-6302b53e7def15b2/lib-zerotrie" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zerovec-2aebc2e0cee4a9ec/lib-zerovec" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zerovec-2aebc2e0cee4a9ec/lib-zerovec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zerovec-derive-85599cf554fb07bd/lib-zerovec_derive" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zerovec-derive-85599cf554fb07bd/lib-zerovec_derive" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zstd-c8256bffb3711196/lib-zstd" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zstd-c8256bffb3711196/lib-zstd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zstd-safe-69323413eb746466/run-build-script-build-script-build" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zstd-safe-69323413eb746466/run-build-script-build-script-build" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zstd-safe-cc66e08603ec8552/lib-zstd_safe" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zstd-safe-cc66e08603ec8552/lib-zstd_safe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zstd-sys-005acabffc5729f2/run-build-script-build-script-build" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zstd-sys-005acabffc5729f2/run-build-script-build-script-build" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zstd-sys-6f8f9d3b1844973d/build-script-build-script-build" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zstd-sys-6f8f9d3b1844973d/build-script-build-script-build" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zstd-sys-9e80e78e9ad84229/lib-zstd_sys" beforeDir="false" afterPath="$PROJECT_DIR$/lab/rust-web-app/target/debug/.fingerprint/zstd-sys-9e80e78e9ad84229/lib-zstd_sys" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/deps/libcc-e309280e2e8bc191.rlib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/deps/libquote-c91d2323de6b1cb2.rlib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/rust-web-app/target/debug/deps/libserde_core-ab7861efc0588d44.rlib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webfonts/unifont_jp-16.0.02.otf" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/unifont_jp-16.0.02.otf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/work/work.html" beforeDir="false" afterPath="$PROJECT_DIR$/work/work.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,32 +116,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript デバッグ.index.html.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Node.js.index.js.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "dev",
-    "last_opened_file_path": "/Users/tanakatomoki/Documents/Homepage/work/glare-illustion",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript デバッグ.index.html.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.index.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/tanakatomoki/Documents/Homepage/fonts&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/fonts" />
       <recent name="$PROJECT_DIR$/work/glare-illustion" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/fonts" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/webfonts" />
     </key>
   </component>
@@ -100,7 +170,9 @@
       <workItem from="1761377612178" duration="6457000" />
       <workItem from="1762441326709" duration="970000" />
       <workItem from="1762472167385" duration="1185000" />
-      <workItem from="1763607438124" duration="5779000" />
+      <workItem from="1764207336547" duration="6073000" />
+      <workItem from="1764817838069" duration="668000" />
+      <workItem from="1764911528318" duration="316000" />
     </task>
     <task id="LOCAL-00001" summary="retrostyleの適用">
       <option name="closed" value="true" />
@@ -151,5 +223,13 @@
     <MESSAGE value="retrostyleの適用" />
     <MESSAGE value="ロゴAAのサイズ調整" />
     <option name="LAST_COMMIT_MESSAGE" value="ロゴAAのサイズ調整" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>
