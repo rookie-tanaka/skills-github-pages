@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sono:wght@800&display=swap');
 @import "tailwindcss";
+@import 'lenis/dist/lenis.css';
 
 @font-face {
   font-family: "Unifont";
@@ -70,6 +71,14 @@
         font-family: var(--font-sono);
         -webkit-font-smoothing: antialiased; /* Webkit系ブラウザでアンチエイリアスを再度有効化 */
         font-smooth: auto; /* アンチエイリアスを再度有効化 */
+    }
+    .neural-grid{
+        background-color: #ffffff;
+        background-image:
+                linear-gradient(#e6e6e6 1px, transparent 1px),
+                linear-gradient(90deg, #e6e6e6 1px, transparent 1px)
+    ;
+        background-size: 20px 20px;
     }
 }
 

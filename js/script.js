@@ -1,3 +1,8 @@
+// 初期化
+const lenis = new Lenis({
+    autoRaf: true, // requestAnimationFrameでスクロール処理を継続的に更新するかどうか
+});
+
 // ASCII artを配列として定義
 const asciiArts = [
     `
