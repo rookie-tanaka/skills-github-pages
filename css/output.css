@@ -276,9 +276,6 @@
   .h-7 {
     height: calc(var(--spacing) * 7);
   }
-  .h-62 {
-    height: calc(var(--spacing) * 62);
-  }
   .h-96 {
     height: calc(var(--spacing) * 96);
   }
@@ -308,9 +305,12 @@
   }
   .flex-shrink {
     flex-shrink: 1;
+<<<<<<< HEAD
   }
   .flex-shrink-0 {
     flex-shrink: 0;
+=======
+>>>>>>> main
   }
   .shrink {
     flex-shrink: 1;
@@ -368,9 +368,6 @@
   }
   .object-contain {
     object-fit: contain;
-  }
-  .object-cover {
-    object-fit: cover;
   }
   .p-0 {
     padding: calc(var(--spacing) * 0);
@@ -464,11 +461,6 @@
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-  .sm\:flex-row {
-    @media (width >= 40rem) {
-      flex-direction: row;
-    }
   }
   .sm\:px-\[25\%\] {
     @media (width >= 40rem) {
