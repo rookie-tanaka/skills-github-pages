@@ -34,77 +34,78 @@ _/    _/    _/  _/    _/  _/_/_/    _/_/
   _/  _/        _/_/    _/    _/  _/    _/</p>
         </div>
         <h2 class="mb-8 text-center">- work -</h2>
-        <div class="container text-center p-8">
-                <h1 class="mb-8">イナズマトーナメント</h1>
-                <h2 class="mb-4">概要</h2>
-                <p></p>
-                <h2 class="mb-4 mt-8">使用技術</h2>
-                <ul class="flex gap-8 text-center">
-                    <li>Rust</li>
-                    <li>Web</li>
-                </ul>
-                <h2 class="mb-4 mt-8">URL</h2>
-                <a class="text-primary" href="https://rookie-tanaka.github.io/InazumaTournament/">InazumaTournament</a>
-        </div>
-        <div class="container">
-            <iframe
-                    class="aspect-video w-full rounded-lg h-auto"
-                    src="https://www.youtube.com/embed/f1BY3I1tJFw?si=6v7vk6JUxS-IEydZ"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-            </iframe>
-            <div class="text-center p-4">
-                <h1 class="mb-2">HUSイルミネーション映像課題</h1>
-                <ul class="flex justify-center gap-2 mb-2">
-                    <li>#音楽</li>
-                    <li>#映像</li>
-                    <li>#ロゴアニメーション</li>
-                </ul>
-                <p class="mb-2 w-full text-left">北海道科学大学のキャンパスイルミネーションを紹介する映像を
-                    チームで制作しました。私は映像の一部と音楽、ロゴアニメーションを
-                    担当しました。
-                </p>
+        <div class="flex flex-col items-center">
+            <div class="container text-center p-8">
+                    <h1 class="mb-8">イナズマトーナメント</h1>
+                    <h2 class="mb-4">概要</h2>
+                    <p></p>
+                    <h2 class="mb-4 mt-8">使用技術</h2>
+                    <ul class="flex gap-8 text-center">
+                        <li>Rust</li>
+                        <li>Web</li>
+                    </ul>
+                    <h2 class="mb-4 mt-8">URL</h2>
+                    <a class="text-primary" href="https://rookie-tanaka.github.io/InazumaTournament/">InazumaTournament</a>
+            </div>
+            <div class="container">
+                <iframe
+                        class="aspect-video w-full rounded-lg h-auto"
+                        src="https://www.youtube.com/embed/f1BY3I1tJFw?si=6v7vk6JUxS-IEydZ"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                </iframe>
+                <div class="text-center p-4">
+                    <h1 class="mb-2">HUSイルミネーション映像課題</h1>
+                    <ul class="flex justify-center gap-2 mb-2">
+                        <li>#音楽</li>
+                        <li>#映像</li>
+                        <li>#ロゴアニメーション</li>
+                    </ul>
+                    <p class="mb-2 w-full text-left">北海道科学大学のキャンパスイルミネーションを紹介する映像を
+                        チームで制作しました。私は映像の一部と音楽、ロゴアニメーションを
+                        担当しました。
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+                <a class="" href="/work/museum/index.html">
+                    <img class="rounded-lg"src="/img/art-museum.webp" alt="展示会サンプルのスクリーンショット">
+                </a>
+                <div class="text-center p-4">
+                    <h1 class="mb-2">展示会サンプル</h1>
+                    <ul class="flex justify-center gap-2 mb-2">
+                        <li>#Blender</li>
+                        <li>#HTML/CSS</li>
+                        <li>#A-Frame</li>
+                    </ul>
+                    <p class="w-full text-left mb-2">課題で制作した、展示会のプレビューサイトです。<br>
+                        Blenderでモデリングした展示会場をA-Frameで実装し、<br>
+                        Webブラウザ上でパノラマビューで鑑賞できるようにしました。
+                    </p>
+                    <h4 class="mb-2">つくったきっかけ</h4>
+                    <p class="w-full text-left mb-2">印象派の画家を取り上げてキュレーションを行う課題があり、<br>
+                        我々のグループはアルフレッドシスレーとグラスをテーマに企画を進めました。<br>
+                        その際、課題提示には表現方法は自由と明記されていたため、<br>
+                        パノラマで展示会場を見ることができたら面白く、伝わりやすいのではないかと考え制作しました。
+                    </p>
+                    <h4 class="mb-2">制作時間</h4>
+                    <p class="w-full text-left mb-2">モデリング: 10時間ほど<br>
+                        コーディング: 3時間ほど(Perplexity、Claude利用)
+                    </p>
+                    <h4 class="mb-2">つくる上で難しかったこと</h4>
+                    <h5 class="w-full text-left mb-2">infoアイコンの位置調整</h5>
+                    <p class="w-full text-left mb-2">会場は3dオブジェクトでなく、背景画像となっています。<br>
+                        infoアイコンをblenderでの絵画の位置どおりに配置しようとすると、
+                        どうしても違和感が生じてしまいます。<br>
+                        そのため、A-FrameのVisual Inspectorを用いて、位置の調整を繰り返し、<br>
+                        カメラから違和感のない配置になるよう、調整しました。
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="container">
-            <a class="" href="/work/museum/index.html">
-                <img class="rounded-lg"src="/img/art-museum.webp" alt="展示会サンプルのスクリーンショット">
-            </a>
-            <div class="text-center p-4">
-                <h1 class="mb-2">展示会サンプル</h1>
-                <ul class="flex justify-center gap-2 mb-2">
-                    <li>#Blender</li>
-                    <li>#HTML/CSS</li>
-                    <li>#A-Frame</li>
-                </ul>
-                <p class="w-full text-left mb-2">課題で制作した、展示会のプレビューサイトです。<br>
-                    Blenderでモデリングした展示会場をA-Frameで実装し、<br>
-                    Webブラウザ上でパノラマビューで鑑賞できるようにしました。
-                </p>
-                <h4 class="mb-2">つくったきっかけ</h4>
-                <p class="w-full text-left mb-2">印象派の画家を取り上げてキュレーションを行う課題があり、<br>
-                    我々のグループはアルフレッドシスレーとグラスをテーマに企画を進めました。<br>
-                    その際、課題提示には表現方法は自由と明記されていたため、<br>
-                    パノラマで展示会場を見ることができたら面白く、伝わりやすいのではないかと考え制作しました。
-                </p>
-                <h4 class="mb-2">制作時間</h4>
-                <p class="w-full text-left mb-2">モデリング: 10時間ほど<br>
-                    コーディング: 3時間ほど(Perplexity、Claude利用)
-                </p>
-                <h4 class="mb-2">つくる上で難しかったこと</h4>
-                <h5 class="w-full text-left mb-2">infoアイコンの位置調整</h5>
-                <p class="w-full text-left mb-2">会場は3dオブジェクトでなく、背景画像となっています。<br>
-                    infoアイコンをblenderでの絵画の位置どおりに配置しようとすると、
-                    どうしても違和感が生じてしまいます。<br>
-                    そのため、A-FrameのVisual Inspectorを用いて、位置の調整を繰り返し、<br>
-                    カメラから違和感のない配置になるよう、調整しました。
-                </p>
-            </div>
-        </div>
-
     </section>
 
 </main>
