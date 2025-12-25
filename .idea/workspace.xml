@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0dc322fa-b2b8-40f8-9799-73e62b05fdd4" name="変更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/input.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/input.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/output.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/output.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab/lab.html" beforeDir="false" afterPath="$PROJECT_DIR$/lab/lab.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/work/work.html" beforeDir="false" afterPath="$PROJECT_DIR$/work/work.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +22,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -114,6 +112,7 @@
       <workItem from="1765522557579" duration="71000" />
       <workItem from="1766021951235" duration="1336000" />
       <workItem from="1766056215136" duration="2201000" />
+      <workItem from="1766622374006" duration="163000" />
     </task>
     <task id="LOCAL-00001" summary="retrostyleの適用">
       <option name="closed" value="true" />
@@ -148,7 +147,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="dev" />
                       </list>
                     </value>
                   </entry>
