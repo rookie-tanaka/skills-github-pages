@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0dc322fa-b2b8-40f8-9799-73e62b05fdd4" name="変更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work/work.html" beforeDir="false" afterPath="$PROJECT_DIR$/work/work.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/output.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/output.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +57,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/tanakatomoki/Documents/Homepage/img&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -113,6 +114,9 @@
       <workItem from="1766021951235" duration="1336000" />
       <workItem from="1766056215136" duration="2201000" />
       <workItem from="1766622374006" duration="163000" />
+      <workItem from="1767180875411" duration="43000" />
+      <workItem from="1767417922688" duration="3000" />
+      <workItem from="1767661069840" duration="490000" />
     </task>
     <task id="LOCAL-00001" summary="retrostyleの適用">
       <option name="closed" value="true" />
