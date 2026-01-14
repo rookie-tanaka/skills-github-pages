@@ -1,7 +1,4 @@
-// 初期化
-const lenis = new Lenis({
-    autoRaf: true, // requestAnimationFrameでスクロール処理を継続的に更新するかどうか
-});
+
 
 // ASCII artを配列として定義
 const asciiArts = [
@@ -30,6 +27,20 @@ function getRandomAsciiArt(array) {
     const randomIndex = Math.floor(Math.random() * array.length);
     return array[randomIndex];
 }
+
+const trigger = document.querySelector('#trigger');
+const fixedHeader = document.querySelector('#fixed-header');
+
+const observerOption = {
+    root: null,
+    threshold: 0,
+};
+
+const observer = new IntersectionObserver((entries) => {
+    fixedHeader.classList.toggle('translate-y-0', !entries[0].isIntersecting);
+}, observerOption);
+
+observer.observe(trigger);
 
 // ページ読み込み時に実行
 window.addEventListener('DOMContentLoaded', function() {
